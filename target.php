@@ -23,11 +23,11 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">ReportaTec</a>
+					<a class="navbar-brand" href="index.php">ReportaTec</a>
 				</div>
 				<div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-						<li><a href="#">Home</a></li>
+						<li><a href="index.php">Home</a></li>
                         <li class="active">
                             <a href="#">Add target</a>
                         </li>
@@ -35,7 +35,7 @@
                     <ul class="nav navbar-nav navbar-right">
       					
       					<li >
-        					<a href="#" id="user" data-container="body" >Log Out</a>
+        					<a href="logout.php" id="user" data-container="body" >Log Out</a>
       					</li>
     				</ul> 
 				</div><!--/.nav-collapse -->
@@ -171,203 +171,13 @@
             </div>	
 		</div><!-- /.container -->
 		
-        <script src="http://code.jquery.com/jquery-1.11.0-beta1.js"></script>
+        <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="http://malsup.github.com/jquery.form.js"></script>
-
-        <script type="text/javascript">
-            document.write(window.innerWidth+'x'+window.innerHeight+'<br>');
-            document.write('320x480');
-        </script>
-
-        <script>
-            $(document).ready(function()
-            {
-                var optionsVideo = { 
-                    beforeSend: function() 
-                    {
-                        $("#progressVideo").show();
-                        $("#barVideo").width('0%');
-                        $("#percentVideo").html("0%");
-                    },
-                    uploadProgress: function(event, position, total, percentComplete) 
-                    {
-                        if($("#video").val() != ''){
-                            $("#barVideo").width(percentComplete+'%');
-                            $("#percentVideo").html(percentComplete+'%');
-                        }
-                    },
-                    success: function() 
-                    {
-                        if($("#video").val() != ''){
-                            $("#barVideo").width('100%');
-                            $("#percentVideo").html('100%');
-                            setTimeout(function(){
-                                $("#barVideo").parent().removeClass("active");
-                                $("#barVideo").parent().removeClass("progress-striped");
-                                $("#barVideo").removeClass("progress-bar-default");
-                                $("#barVideo").addClass("progress-bar-success");
-                            },1000);
-                        }
-                    },
-                    complete: function(response) 
-                    {
-                        console.log(response);
-                        //$("#message").html("<font color='green'>"+response.responseText+"</font>");
-                    },
-                    error: function()
-                    {
-                        alert("Error");
-                        //$("#message").html("<font color='red'> ERROR: unable to upload files</font>");
-                    }
-                };
-                var optionsAudio = { 
-                    beforeSend: function() 
-                    {
-                        $("#progressAudio").show();
-                        //clear everything
-                        $("#barAudio").width('0%');
-                        $("#percentAudio").html("0%");
-                    },
-                    uploadProgress: function(event, position, total, percentComplete) 
-                    {
-                        if($("#audio").val() != ''){
-                            $("#barAudio").width(percentComplete+'%');
-                            $("#percentAudio").html(percentComplete+'%');
-                        }
-                    },
-                    success: function() 
-                    {
-                        if($("#audio").val() != ''){
-                            $("#barAudio").width('100%');
-                            $("#percentAudio").html('100%');
-                            setTimeout(function(){
-                                $("#barAudio").parent().removeClass("active");
-                                $("#barAudio").parent().removeClass("progress-striped");
-                                $("#barAudio").removeClass("progress-bar-default");
-                                $("#barAudio").addClass("progress-bar-success");
-                            },1000);
-                        }
-                    },
-                    complete: function(response) 
-                    {
-                        //$("#message").html("<font color='green'>"+response.responseText+"</font>");
-                    },
-                    error: function()
-                    {
-                        //$("#message").html("<font color='red'> ERROR: unable to upload files</font>");
-                    }
-                }; 
-                $("#targetFormVideo").ajaxForm(optionsVideo);
-                $("#targetFormAudio").ajaxForm(optionsAudio);
-            });
-            
-            function submit(){
-                //$("#targetForm").submit();
-                $("#targetFormVideo").submit();
-                $("#targetFormAudio").submit();
-                //$("#targetFormImage").submit();
-            }
-        </script>
-
-        <script>
-            //Script para la selección de archivos
-            $(document)
-                .on('change', '.btn-file :file', function() {
-                    var input = $(this),
-                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
-                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-                    input.trigger('fileselect', [numFiles, label]);
-                });
-            
-            $(document).ready( function() {
-                $('.btn-file :file').on('fileselect', function(event, numFiles, label) {
-                    var input = $(this).parents('.input-group').find(':text'), label;
-                    if(input.length) {
-                        if(label != "")
-                            input.val(label);
-                        else
-                            input.val("Select a file...");
-                    }
-                });
-            });     
-        </script>
-        <script>
-            function ShowImagePreview(files)
-            {
-                if(!(window.File && window.FileReader && window.FileList && window.Blob)){
-                  alert('The File APIs are not fully supported in this browser.');
-                  return false;
-                }
-
-                if(typeof FileReader === "undefined"){
-                    alert("Filereader undefined!");
-                    return false;
-                }
-
-                var file = files[0];
-                if(file == undefined){
-                    var canvas = document.getElementById('previewcanvas');
-                    var context = canvas.getContext( '2d' );
-                    context.clearRect(0, 0, canvas.width, canvas.height);
-                }else{
-                    if(!( /image/i ).test(file.type)){
-                        alert( "File is not an image." );
-                        return false;
-                    }
-                }
-
-                reader = new FileReader();
-                reader.onload = function(event) 
-                        { var img = new Image; 
-                          img.onload = UpdatePreviewCanvas; 
-                          img.src = event.target.result;  }
-                reader.readAsDataURL( file );
-            }
-
-            function UpdatePreviewCanvas()
-            {
-                var img = this;
-                var canvas = document.getElementById('previewcanvas');
-
-                if(typeof canvas === "undefined" || typeof canvas.getContext === "undefined")
-                    return;
-
-                var context = canvas.getContext( '2d' );
-                context.clearRect(0, 0, canvas.width, canvas.height);
-
-                var world = new Object();
-                world.width = canvas.offsetWidth;
-                world.height = canvas.offsetHeight;
-
-                canvas.width = world.width;
-                canvas.height = world.height;
-
-                if(typeof img === "undefined")
-                    return;
-
-                var WidthDif = img.width - world.width;
-                var HeightDif = img.height - world.height;
-
-                var Scale = 0.0;
-                if(WidthDif > HeightDif){
-                    Scale = world.width / img.width;
-                }
-                else{
-                    Scale = world.height / img.height;
-                }
-                if(Scale > 1)
-                    Scale = 1;
-
-                var UseWidth = Math.floor( img.width * Scale );
-                var UseHeight = Math.floor( img.height * Scale );
-
-                var x = Math.floor( ( world.width - UseWidth ) / 2 );
-                var y = Math.floor( ( world.height - UseHeight ) / 2 );
-
-                context.drawImage(img, x, y, UseWidth, UseHeight);  
-            }
-        </script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/target.php/submit.js"></script>
+        <script src="js/target.php/fileSelect.js"></script>
+        <script src="js/target.php/imagePreview.js"></script>
+    
 
         </body>
   	</body>
