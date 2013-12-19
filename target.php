@@ -29,7 +29,7 @@
                     <ul class="nav navbar-nav">
 						<li><a href="index.php">Home</a></li>
                         <li class="active">
-                            <a href="#">Add target</a>
+                            <a href="target.php">Add target</a>
                         </li>
 					</ul>            
                     <ul class="nav navbar-nav navbar-right">
@@ -122,11 +122,12 @@
                                     </div>
                                 </div> 
                             </form>
+                            <hr style="margin-top: 3em">
                             <button id="submit" class="btn btn-primary btn-block" onclick="submit()">
                                 Submit
-                            </button> 
+                            </button>
                         </div>
-                    </div><!-- Busqueda -->
+                    </div>
                 </div><!-- /.sidebar -->
                 <!--
                 CONTENIDO
