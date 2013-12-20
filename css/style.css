@@ -7,8 +7,15 @@
 */
 
 body{
-	background:	#eaedf2;
-	/*background: #eaedf2 url(../img/noisebg.png);*/
+	background:			#eaedf2;
+	/*background: 		#eaedf2 url(../img/noisebg.png);*/
+	-webkit-user-select:none;	/* Chrome all / Safari all */
+	-moz-user-select: 	none;	/* Firefox all */
+	-ms-user-select: 	none;	/* IE 10+ */
+	/* No support for these yet, use at own risk */
+	-o-user-select:		none;
+	user-select:		none;
+	cursor:				default;
 }
 
 .CScontenedor{
@@ -98,3 +105,24 @@ a.signIn, button.signIn{
 	height: inherit;
 	width: 	100%;
 }
+
+/*
+	=================
+	CSS FOR INDEX.PHP
+	=================
+*/
+
+.infoTitle{
+	font-size: 	 24px;
+	width:		 100%;
+	font-weight: bold;
+}
+
+.targetContainer{
+	background: #EEE;
+	margin-bottom: 1em;
+}
+
+
+
+

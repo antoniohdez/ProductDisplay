@@ -61,7 +61,7 @@
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
-                                    <input type="text" class="form-control" name="url" placeholder="www.example.com">
+                                    <input type="text" class="form-control" name="url" placeholder="www.myCompany.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>
@@ -76,6 +76,8 @@
                                     <input type="text" class="form-control" name="telephone" placeholder="(555) 555-5555">
                                 </div>
                             </form>
+
+                            <hr style="margin-top: 2em">
                             <form id="targetFormVideo" role="form" action="upload.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <!--
@@ -99,6 +101,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <hr style="margin-top: 3em">
                             <form id="targetFormAudio" role="form" action="upload.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <!--

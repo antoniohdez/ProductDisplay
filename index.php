@@ -35,7 +35,7 @@
                     <ul class="nav navbar-nav navbar-right">
       					
       					<li >
-        					<a href="logout.php" id="user" data-container="body" >Log Out</a>
+        					<a href="logout.php" id="user" data-container="body">Log Out</a>
       					</li>
     				</ul> 
 				</div><!--/.nav-collapse -->
@@ -52,15 +52,15 @@
                 	<div class="panel panel-primary">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                Illutio
-                                <span class="glyphicon glyphicon-pencil" style="float:right"></span>
+                                Profile
+                                <span id="editInfo" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
                             </h3>
                         </div>
                         <div>
                             <img src="img/illutio.png" style="width:100%" alt="Target image">
                         </div>
                         <div class="panel-body">
-                            <div style="font-size: 24px"><strong>Illutio</strong></div>
+                            <div><div class="infoTitle" contenteditable>Illutio</div></div>
                             <div>México</div>
                             <div>Zapopan</div>
                             <div>info@illut.io</div>
@@ -75,8 +75,30 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Targets</h3>
                         </div>
-                        <div class="panel-body">
-                            
+                        <div class="panel-body" style="padding-bottom:0px">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        <div class="targetImage">
+                                            IMAGEN
+                                        </div>
+                                        <div>
+                                            Datos
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        a b c d e f g h i j k l m n ñ o p q r s t u v w x y z a b c d e f g h i j k l m n ñ o p q r s t u v w x y z
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        g h i j  m n ñ o p q s t u v w x y z a b c d e f g h i j k l m n ñ o p q r s t u v w x y z
+                                    </div>
+                                </div>
+
+                            </row>
                         </div>
                     </div>
                 </div>
