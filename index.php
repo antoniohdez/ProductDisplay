@@ -81,6 +81,57 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>PlayStation 4</strong>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
+                                        </div>
+                                        <div class="targetImageContainer">
+                                            <img src="img/PS4.jpg" class="targetImage" alt="Target image">
+                                        </div>
+                                        <div class="targetInfo">
+                                            <div class="info">
+                                                www.illut.io
+                                            </div>
+                                            <div class="info">
+                                                facebook.com/illutio
+                                            </div>
+                                            <div class="info">
+                                                twitter.com/illutio
+                                            </div>
+                                            <div class="info">
+                                                (555) 555-5555
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        <div class="targetProduct">
+                                            <strong>Nexus 5</strong>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
+                                        </div>
+                                        <div class="targetImageContainer">
+                                            <img src="img/NEXUS5.jpg" class="targetImage" alt="Target image">
+                                        </div>
+                                        <div class="targetInfo">
+                                            <div>
+                                                www.illut.io
+                                            </div>
+                                            <div>
+                                                facebook.com/illutio
+                                            </div>
+                                            <div>
+                                                twitter.com/illutio
+                                            </div>
+                                            <div>
+                                                (555) 555-5555
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        <div class="targetProduct">
+                                            <strong>PlayStation 4</strong>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <img src="img/PS4.jpg" class="targetImage" alt="Target image">
@@ -105,6 +156,7 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Nexus 5</strong>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <img src="img/NEXUS5.jpg" class="targetImage" alt="Target image">
@@ -125,17 +177,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="targetContainer">
-                                        C
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="targetContainer">
-                                        D
-                                    </div>
-                                </div>
-                            </row>
+                            </div>
                         </div>
                     </div>
                 </div>

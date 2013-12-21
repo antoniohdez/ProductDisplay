@@ -148,7 +148,7 @@
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">
-                                                Browse… <input id="audio" name="image" type="file" onchange="return ShowImagePreview(this.files);" >
+                                                Browse… <input id="image" name="image" type="file" onchange="return ShowImagePreview(this.files);" >
                                             </span>
                                         </span>
                                         <input type="text" class="form-control" readonly="" value="Select a file...">
@@ -163,7 +163,7 @@
                                 </div> 
                             </form>
                             <div id="preview">
-                                <canvas id="previewcanvas">
+                                <canvas id="previewcanvas" style="cursor:pointer">
 
                                 </canvas>
                             </div>
@@ -181,6 +181,11 @@
         <script src="js/target.php/submit.js"></script>
         <script src="js/target.php/fileSelect.js"></script>
         <script src="js/target.php/imagePreview.js"></script>
+        <script>
+            $("canvas").click(function() {
+                $("#image").trigger("click");
+            });
+        </script>
     
 
         </body>
