@@ -57,7 +57,7 @@
                             </h3>
                         </div>
                         <div>
-                            <img src="img/illutio.png" style="width:100%" alt="Target image">
+                            <img src="img/illutio.png" style="width:100%" alt="Logo image">
                         </div>
                         <div class="panel-body">
                             <div><div class="infoTitle" contenteditable>Illutio</div></div>
@@ -75,29 +75,66 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Targets</h3>
                         </div>
-                        <div class="panel-body" style="padding-bottom:0px">
+                        <div class="panel-body" style="padding-top:0">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        <div class="targetImage">
-                                            IMAGEN
+                                        <div class="targetProduct">
+                                            <strong>PlayStation 4</strong>
                                         </div>
-                                        <div>
-                                            Datos
+                                        <div class="targetImageContainer">
+                                            <img src="img/PS4.jpg" class="targetImage" alt="Target image">
+                                        </div>
+                                        <div class="targetInfo">
+                                            <div>
+                                                www.illut.io
+                                            </div>
+                                            <div>
+                                                facebook.com/illutio
+                                            </div>
+                                            <div>
+                                                twitter.com/illutio
+                                            </div>
+                                            <div>
+                                                (555) 555-5555
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        a b c d e f g h i j k l m n ñ o p q r s t u v w x y z a b c d e f g h i j k l m n ñ o p q r s t u v w x y z
+                                        <div class="targetProduct">
+                                            <strong>Nexus 5</strong>
+                                        </div>
+                                        <div class="targetImageContainer">
+                                            <img src="img/NEXUS5.jpg" class="targetImage" alt="Target image">
+                                        </div>
+                                        <div class="targetInfo">
+                                            <div>
+                                                www.illut.io
+                                            </div>
+                                            <div>
+                                                facebook.com/illutio
+                                            </div>
+                                            <div>
+                                                twitter.com/illutio
+                                            </div>
+                                            <div>
+                                                (555) 555-5555
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        g h i j  m n ñ o p q s t u v w x y z a b c d e f g h i j k l m n ñ o p q r s t u v w x y z
+                                        C
                                     </div>
                                 </div>
-
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        D
+                                    </div>
+                                </div>
                             </row>
                         </div>
                     </div>
@@ -109,7 +146,7 @@
 		
         <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>
-
+        
         </body>
   	</body>
 </html>

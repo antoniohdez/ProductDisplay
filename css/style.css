@@ -119,10 +119,28 @@ a.signIn, button.signIn{
 }
 
 .targetContainer{
-	background: #EEE;
-	margin-bottom: 1em;
+	background: #eaedf2;
+	border-radius: .25em;
+	height: 320px;
+	margin-top: 1em;
+	border: 1px solid #AAA;
 }
 
+.targetImageContainer{
+	border-top: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
 
+}
 
+.targetImage{
+	width: 100%;
+}
+
+.targetProduct{
+	padding: .5em;
+}
+
+.targetInfo{
+	padding: 1em;
+}
 
