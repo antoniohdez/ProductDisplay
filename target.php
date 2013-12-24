@@ -23,7 +23,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php">ReportaTec</a>
+					<a class="navbar-brand" href="index.php">ProductDisplay</a>
 				</div>
 				<div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -49,7 +49,7 @@
                 SIDEBAR
                 -->
                 <div class="col-md-4 col-md-offset-1">
-                	<div class="panel panel-primary">
+                	<div class="panel panel-primary shadow">
                         <div class="panel-heading">
                             <h3 class="panel-title">New target</h3>
                         </div>
@@ -76,9 +76,51 @@
                                     <input type="text" class="form-control" name="telephone" placeholder="(555) 555-5555">
                                 </div>
                             </form>
+                            <hr style="margin-top: 3em">
+
+                            <form id="targetFormAudio" role="form" action="upload.php" method="post" enctype="multipart/form-data"
+                            <?php if(isset($_GET["p"])){ ?> style="display:none;"<?php } ?> >
+                                <div class="form-group">
+                                    <!--
+                                    <label for="audio">Audio</label>
+                                    <input id="audio" type="file" class="form-control" name="audio">
+                                    -->
+                                    <label for="audio">Audio</label>
+
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-primary btn-file">
+                                                Browse… <input id="audio" name="audio" type="file">
+                                            </span>
+                                        </span>
+                                        <input type="text" class="form-control" readonly="" value="Select a file...">
+                                    </div>
+
+                                    <div id="progressAudio" class="progress progress-striped active">
+                                        <div id="barAudio" class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                            <span id="percentAudio" class="sr-only">0%</span>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </form>
+
+                            <?php if(isset($_GET["p"])){ ?>
+                            <div id="previewAudio">
+                                <label for="audio">Audio</label><br>
+                                <div>
+                                    <span>example.mp3</span><span onclick="showAudioForm()" class="cursorLink" style="float:right; color:#F00"><b class="glyphicon glyphicon-remove"></b> Remove</span>
+                                </div>
+                                <audio controls>
+                                    <source src="uploadedMedia/audio/example.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                            <?php } ?>
 
                             <hr style="margin-top: 2em">
-                            <form id="targetFormVideo" role="form" action="upload.php" method="post" enctype="multipart/form-data">
+
+                            <form id="targetFormVideo" role="form" action="upload.php" method="post" enctype="multipart/form-data"
+                            <?php if(isset($_GET["p"])){ ?> style="display:none;"<?php } ?> >
                                 <div class="form-group">
                                     <!--
                                     <label for="video">Video</label>
@@ -101,31 +143,23 @@
                                     </div>
                                 </div>
                             </form>
-                            <hr style="margin-top: 3em">
-                            <form id="targetFormAudio" role="form" action="upload.php" method="post" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <!--
-                                    <label for="audio">Audio</label>
-                                    <input id="audio" type="file" class="form-control" name="audio">
-                                    -->
-                                    <label for="audio">Audio</label>
-                                    <div class="input-group">
-                                        <span class="input-group-btn">
-                                            <span class="btn btn-primary btn-file">
-                                                Browse… <input id="audio" name="audio" type="file">
-                                            </span>
-                                        </span>
-                                        <input type="text" class="form-control" readonly="" value="Select a file...">
-                                    </div>
 
-                                    <div id="progressAudio" class="progress progress-striped active">
-                                        <div id="barAudio" class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                            <span id="percentAudio" class="sr-only">0%</span>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </form>
-                            <hr style="margin-top: 3em">
+                            <?php if(isset($_GET["p"])){ ?>
+                            <div id="previewVideo">
+                                <label for="video">Video</label>
+                                <div>
+                                    <span>example.mp4</span><span class="cursorLink" onclick="showVideoForm()" style="float:right; color:#F00"><b class="glyphicon glyphicon-remove"></b> Remove</span>
+                                </div>
+                                <video width="100%" controls>
+                                    <source src="uploadedMedia/video/example.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                            <?php } ?>
+
+                            <hr style="margin-top: 2em">
                             <button id="submit" class="btn btn-primary btn-block" onclick="submit()">
                                 Submit
                             </button>
@@ -136,7 +170,7 @@
                 CONTENIDO
                 -->
                 <div class="col-md-6">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-primary shadow">
                         <!-- Default panel contents -->
                         <div class="panel-heading">
                             <h3 class="panel-title">Image</h3>
@@ -163,8 +197,7 @@
                                 </div> 
                             </form>
                             <div id="preview">
-                                <canvas id="previewcanvas" style="cursor:pointer">
-
+                                <canvas id="previewcanvas" style="cursor:pointer; border: 1px solid #AAA">
                                 </canvas>
                             </div>
                         </div>
@@ -182,9 +215,21 @@
         <script src="js/target.php/fileSelect.js"></script>
         <script src="js/target.php/imagePreview.js"></script>
         <script>
-            $("canvas").click(function() {
+            $("canvas").click(function(){
                 $("#image").trigger("click");
             });
+
+            function showVideoForm(){
+                $("#previewVideo").fadeOut("slow", function() {
+                    $("#targetFormVideo").fadeIn("slow");
+                });
+            }
+
+            function showAudioForm(){
+                $("#previewAudio").fadeOut("slow", function() {
+                    $("#targetFormAudio").fadeIn("slow");    
+                });
+            }
         </script>
     
 

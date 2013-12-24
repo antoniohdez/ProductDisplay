@@ -30,6 +30,10 @@ textarea{
 	resize:	none;	
 }
 
+.cursorLink{
+	cursor:pointer;
+}
+
 /*	
 	=================
 	CSS FOR LOGIN.PHP
@@ -63,7 +67,7 @@ a.signIn, button.signIn{
 	==================
 */
 
-#progressVideo, #progressAudio, #progressImage{ 
+#progressVideo, #progressAudio{ 
 	position:		relative;
 	width:			100%;
 	top: 			1em;
@@ -106,6 +110,10 @@ a.signIn, button.signIn{
 	width: 	100%;
 }
 
+audio{
+	width: 100%;
+}
+
 /*
 	=================
 	CSS FOR INDEX.PHP
@@ -118,15 +126,18 @@ a.signIn, button.signIn{
 	font-weight: bold;
 }
 
+.shadow{
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
 .targetContainer{
 	background: 	#eaedf2;
 	border-radius: 	.25em;
 	max-height: 	350px;
 	margin-top: 	1em;
-	border: 		1px solid #AAA;   
-    -webkit-box-shadow:	0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:	0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:	0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	border: 		1px solid #AAA;
 }
 
 .targetImageContainer{

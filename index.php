@@ -23,7 +23,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php">ReportaTec</a>
+					<a class="navbar-brand" href="index.php">ProductDisplay</a>
 				</div>
 				<div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -49,11 +49,11 @@
                 SIDEBAR
                 -->
                 <div class="col-md-3">
-                	<div class="panel panel-primary">
+                	<div class="panel panel-primary shadow">
                         <div class="panel-heading">
                             <h3 class="panel-title">
                                 Profile
-                                <span id="editInfo" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
+                                <span id="editInfo" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                             </h3>
                         </div>
                         <div>
@@ -71,7 +71,7 @@
                 CONTENIDO
                 -->
                 <div class="col-md-9">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-primary shadow">
                         <div class="panel-heading">
                             <h3 class="panel-title">Targets</h3>
                         </div>
@@ -81,7 +81,7 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>PlayStation 4</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <img src="img/PS4.jpg" class="targetImage" alt="Target image">
@@ -106,7 +106,7 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Nexus 5</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <img src="img/NEXUS5.jpg" class="targetImage" alt="Target image">
@@ -131,7 +131,7 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>PlayStation 4</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <img src="img/PS4.jpg" class="targetImage" alt="Target image">
@@ -156,7 +156,7 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Nexus 5</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil" style="float:right; cursor:pointer"></span>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <img src="img/NEXUS5.jpg" class="targetImage" alt="Target image">
@@ -177,17 +177,43 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        <div class="targetProduct">
+                                            <strong>PlayStation 4</strong>
+                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                        </div>
+                                        <div class="targetImageContainer">
+                                            <img src="img/PS4.jpg" class="targetImage" alt="Target image">
+                                        </div>
+                                        <div class="targetInfo">
+                                            <div class="info">
+                                                www.illut.io
+                                            </div>
+                                            <div class="info">
+                                                facebook.com/illutio
+                                            </div>
+                                            <div class="info">
+                                                twitter.com/illutio
+                                            </div>
+                                            <div class="info">
+                                                (555) 555-5555
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
             </div>	
 		</div><!-- /.container -->
 		
         <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script>
+            $("img").on("dragstart", function(event){event.preventDefault();});
+        </script>
         
         </body>
   	</body>
