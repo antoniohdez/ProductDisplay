@@ -84,6 +84,7 @@ a.signIn, button.signIn{
     position: relative;
     overflow: hidden;
 }
+
 .btn-file input[type=file] {
     position: 	absolute;
     top: 		0;
@@ -105,6 +106,7 @@ a.signIn, button.signIn{
 	height: 	400px;
 	margin-top: 1em;
 }
+
 #previewcanvas{
 	height: inherit;
 	width: 	100%;
@@ -112,6 +114,11 @@ a.signIn, button.signIn{
 
 audio{
 	width: 100%;
+}
+
+.remove{
+	float:	right;
+	color:	#F00
 }
 
 /*
@@ -127,9 +134,9 @@ audio{
 }
 
 .shadow{
-	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow:	0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:	0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:	0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 .targetContainer{
@@ -164,4 +171,3 @@ audio{
 	overflow:		hidden; 
 	text-overflow:	ellipsis;
 }
-

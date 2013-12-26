@@ -107,13 +107,14 @@
                             <?php if(isset($_GET["p"])){ ?>
                             <div id="previewAudio">
                                 <label for="audio">Audio</label><br>
-                                <div>
-                                    <span>example.mp3</span><span onclick="showAudioForm()" class="cursorLink" style="float:right; color:#F00"><b class="glyphicon glyphicon-remove"></b> Remove</span>
+                                <div class="info">
+                                    <span onclick="showAudioForm()" class="cursorLink remove"><b class="glyphicon glyphicon-remove"></b>&nbspRemove</span>
+                                    <span>
+                                        <a href="http://google.com.mx" target="_blank">
+                                            audio.mp3
+                                        </a>
+                                    </span>
                                 </div>
-                                <audio controls>
-                                    <source src="uploadedMedia/audio/example.mp3" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
                             </div>
                             <?php } ?>
 
@@ -147,14 +148,14 @@
                             <?php if(isset($_GET["p"])){ ?>
                             <div id="previewVideo">
                                 <label for="video">Video</label>
-                                <div>
-                                    <span>example.mp4</span><span class="cursorLink" onclick="showVideoForm()" style="float:right; color:#F00"><b class="glyphicon glyphicon-remove"></b> Remove</span>
+                                <div class="info">
+                                    <span onclick="showVideoForm()" class="cursorLink remove"><b class="glyphicon glyphicon-remove"></b>&nbspRemove</span>
+                                    <span>
+                                        <a href="http://google.com.mx" target="_blank">
+                                            video.mp4
+                                        </a>
+                                    </span>
                                 </div>
-                                <video width="100%" controls>
-                                    <source src="uploadedMedia/video/example.mp4" type="video/mp4">
-                                    <source src="movie.ogg" type="video/ogg">
-                                    Your browser does not support the video tag.
-                                </video>
                             </div>
 
                             <?php } ?>
