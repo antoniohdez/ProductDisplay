@@ -49,7 +49,6 @@
 		</header>
 		
 		<div class="container CScontenedor">
-            
             <div class="row">
             	<!--
                 SIDEBAR

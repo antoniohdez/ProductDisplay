@@ -68,6 +68,17 @@
                             <div>info@illut.io</div>
                         </div>
                     </div>
+                    <div class="infoLinks">
+                        <span class="infoLink">
+                            <a class="CSlink" href="http://illut.io">illtu.io</a>
+                        </span>
+                        <span class="infoLink">
+                            <a class="CSlink" href="mailto:info@illut.io">Contact</a>
+                        </span>
+                        <span class="infoLink">
+                            <a class="CSlink" href="#myModal" data-toggle="modal">Report bugs</a>
+                        </span>
+                    </div>
                 </div><!-- /.sidebar -->
                 <!--
                 CONTENIDO
@@ -220,6 +231,49 @@
                 </div>
             </div>	
 		</div><!-- /.container -->
+
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--
+                        Header
+                    -->
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Report a bug</h4>
+                    </div>
+                    <!--
+                        Body
+                    -->
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form" action="reportBug.php" method="post">
+                            <div class="form-group">
+                                <label for="inputProblem" class="col-lg-2 control-label">Problem:</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="inputProblem" name="inputProblem" placeholder="What's your problem?">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDetail" class="col-lg-2 control-label">Description:</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" id="inputDetail" name="inputDetail" rows="3" placeholder="Can you describe the problem?"></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--
+                        Footer
+                    -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Send report</button>
+                    </div>
+                    
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
 		
         <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>

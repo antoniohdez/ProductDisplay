@@ -101,7 +101,6 @@ a.signIn, button.signIn{
     right: 		0;
     min-width: 	100%;
     min-height: 100%;
-    font-size: 	999px;
     text-align: right;
     filter: 	alpha(opacity=0);
     opacity: 	0;
@@ -120,10 +119,6 @@ a.signIn, button.signIn{
 #previewcanvas{
 	height: inherit;
 	width: 	100%;
-}
-
-audio{
-	width: 100%;
 }
 
 .remove{
@@ -184,4 +179,12 @@ audio{
 
 .targetInfo{
 	padding: 1em;
+}
+
+.infoLinks{
+	margin: 0 1em 1em 0;
+}
+
+.infoLink{
+	margin: 0 0 0 1em;
 }

@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Product Display</a>
+                <a class="navbar-brand" href="index.php">ProductDisplay</a>
             </div>
         </div>
     </header>
