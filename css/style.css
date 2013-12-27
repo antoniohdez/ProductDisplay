@@ -34,6 +34,16 @@ textarea{
 	cursor:pointer;
 }
 
+.CSlink{
+	color: #000;
+}
+
+.previewNameForm, .info{
+	white-space:	nowrap;  
+	overflow:		hidden; 
+	text-overflow:	ellipsis;
+}
+
 /*	
 	=================
 	CSS FOR LOGIN.PHP
@@ -149,6 +159,7 @@ audio{
 
 .targetImageContainer{
 	height: 		152px;
+	background: 	#FFF;
 	border-top: 	1px solid #AAA;
 	border-bottom: 	1px solid #AAA;
 	text-align: 	center;
@@ -173,10 +184,4 @@ audio{
 
 .targetInfo{
 	padding: 1em;
-}
-
-.info{
-	white-space:	nowrap;  
-	overflow:		hidden; 
-	text-overflow:	ellipsis;
 }

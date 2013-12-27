@@ -53,7 +53,9 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">
                                 Profile
-                                <span id="editInfo" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                <a href="profile.php">
+                                    <span id="editInfo" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                </a>
                             </h3>
                         </div>
                         <div>
@@ -85,18 +87,18 @@
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
-                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
                                             </div>
                                         </div>
                                         <div class="targetInfo">
                                             <div class="info">
-                                                www.illut.io
+                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
                                             </div>
                                             <div class="info">
-                                                facebook.com/illutio
+                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
                                             </div>
                                             <div class="info">
-                                                twitter.com/illutio
+                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
                                             </div>
                                             <div class="info">
                                                 (555) 555-5555
@@ -112,7 +114,7 @@
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
-                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
                                             </div>
                                         </div>
                                         <div class="targetInfo">
@@ -139,7 +141,7 @@
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
-                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
                                             </div>
                                         </div>
                                         <div class="targetInfo">
@@ -166,7 +168,7 @@
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
-                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
                                             </div>
                                         </div>
                                         <div class="targetInfo">
@@ -193,7 +195,7 @@
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
-                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
                                             </div>
                                         </div>
                                         <div class="targetInfo">
@@ -222,7 +224,9 @@
         <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script>
-            $("img").on("dragstart", function(event){event.preventDefault();});
+            $("img").on("dragstart", function(event){
+                event.preventDefault();
+            });
         </script>
         
         </body>

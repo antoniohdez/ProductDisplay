@@ -3,7 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Home - ProductDisplay</title>
+		<title>
+            <?php 
+                if(isset($_GET["p"])) echo "Edit ";
+                else echo "Add ";
+            ?>
+            target - ProductDisplay
+        </title>
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap2.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
@@ -54,10 +60,10 @@
                             <h3 class="panel-title">New target</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="targetForm" role="form" action="upload.php" method="post" enctype="multipart/form-data">
+                            <form id="targetForm" role="form" action="targetUpload.php" method="post">
                                 <div class="form-group">
                                     <label for="productName">Product name*</label>
-                                    <input type="text" class="form-control" name="productName" placeholder="Product" required>
+                                    <input type="text" class="form-control" name="productName" placeholder="Product" autofocus required>
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
@@ -76,9 +82,9 @@
                                     <input type="text" class="form-control" name="telephone" placeholder="(555) 555-5555">
                                 </div>
                             </form>
-                            <hr style="margin-top: 3em">
+                            <hr style="margin-top: 2em">
 
-                            <form id="targetFormAudio" role="form" action="upload.php" method="post" enctype="multipart/form-data"
+                            <form id="targetFormAudio" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data"
                             <?php if(isset($_GET["p"])){ ?> style="display:none;"<?php } ?> >
                                 <div class="form-group">
                                     <!--
@@ -107,7 +113,7 @@
                             <?php if(isset($_GET["p"])){ ?>
                             <div id="previewAudio">
                                 <label for="audio">Audio</label><br>
-                                <div class="info">
+                                <div class="previewNameForm">
                                     <span onclick="showAudioForm()" class="cursorLink remove"><b class="glyphicon glyphicon-remove"></b>&nbspRemove</span>
                                     <span>
                                         <a href="http://google.com.mx" target="_blank">
@@ -120,7 +126,7 @@
 
                             <hr style="margin-top: 2em">
 
-                            <form id="targetFormVideo" role="form" action="upload.php" method="post" enctype="multipart/form-data"
+                            <form id="targetFormVideo" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data"
                             <?php if(isset($_GET["p"])){ ?> style="display:none;"<?php } ?> >
                                 <div class="form-group">
                                     <!--
@@ -148,7 +154,7 @@
                             <?php if(isset($_GET["p"])){ ?>
                             <div id="previewVideo">
                                 <label for="video">Video</label>
-                                <div class="info">
+                                <div class="previewNameForm">
                                     <span onclick="showVideoForm()" class="cursorLink remove"><b class="glyphicon glyphicon-remove"></b>&nbspRemove</span>
                                     <span>
                                         <a href="http://google.com.mx" target="_blank">
