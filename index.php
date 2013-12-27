@@ -80,11 +80,13 @@
                                 <div class="col-md-4">
                                     <div class="targetContainer">
                                         <div class="targetProduct">
-                                            <strong>PlayStation 4</strong>
+                                            <strong>Título</strong>
                                             <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
-                                            <img src="img/PS4.jpg" class="targetImage" alt="Target image">
+                                            <div class="vertical">
+                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                            </div>
                                         </div>
                                         <div class="targetInfo">
                                             <div class="info">
@@ -105,11 +107,13 @@
                                 <div class="col-md-4">
                                     <div class="targetContainer">
                                         <div class="targetProduct">
-                                            <strong>Nexus 5</strong>
+                                            <strong>Título 2</strong>
                                             <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
-                                            <img src="img/NEXUS5.jpg" class="targetImage" alt="Target image">
+                                            <div class="vertical">
+                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                            </div>
                                         </div>
                                         <div class="targetInfo">
                                             <div>
@@ -130,11 +134,13 @@
                                 <div class="col-md-4">
                                     <div class="targetContainer">
                                         <div class="targetProduct">
-                                            <strong>PlayStation 4</strong>
+                                            <strong>Título 3</strong>
                                             <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
-                                            <img src="img/PS4.jpg" class="targetImage" alt="Target image">
+                                            <div class="vertical">
+                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                            </div>
                                         </div>
                                         <div class="targetInfo">
                                             <div>
@@ -155,11 +161,13 @@
                                 <div class="col-md-4">
                                     <div class="targetContainer">
                                         <div class="targetProduct">
-                                            <strong>Nexus 5</strong>
+                                            <strong>Título 4</strong>
                                             <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
-                                            <img src="img/NEXUS5.jpg" class="targetImage" alt="Target image">
+                                            <div class="vertical">
+                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                            </div>
                                         </div>
                                         <div class="targetInfo">
                                             <div>
@@ -180,11 +188,13 @@
                                 <div class="col-md-4">
                                     <div class="targetContainer">
                                         <div class="targetProduct">
-                                            <strong>PlayStation 4</strong>
+                                            <strong>Título 5</strong>
                                             <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
                                         </div>
                                         <div class="targetImageContainer">
-                                            <img src="img/PS4.jpg" class="targetImage" alt="Target image">
+                                            <div class="vertical">
+                                                <img src="uploadedMedia/images/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                            </div>
                                         </div>
                                         <div class="targetInfo">
                                             <div class="info">
