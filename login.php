@@ -25,9 +25,9 @@
     </header>
 
 	<div class="container CScontenedor">
-		<div class="row">
+		<div class="row-fluid">
 			<div class="col-md-offset-4 col-md-4">
-				<div class="panel panel-primary">
+				<div class="panel panel-primary shadow">
 					<div class="panel-heading CScentrar">
 			        	Product Display
 			        </div>

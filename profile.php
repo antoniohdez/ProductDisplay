@@ -42,7 +42,7 @@
 		</header>
 		
 		<div class="container CScontenedor">
-            <div class="row">
+            <div class="row-fluid">
             	<!--
                 SIDEBAR
                 -->

@@ -44,7 +44,7 @@
 		
 		<div class="container CScontenedor">
             
-            <div class="row">
+            <div class="row-fluid">
             	<!--
                 SIDEBAR
                 -->
@@ -54,7 +54,7 @@
                             <h3 class="panel-title">
                                 Profile
                                 <a href="profile.php">
-                                    <span id="editInfo" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                    <span id="editProfile" class="glyphicon glyphicon-pencil cursorLink editProfileButton" rel="tooltip" title="Edit" data-placement="right"></span>
                                 </a>
                             </h3>
                         </div>
@@ -68,16 +68,16 @@
                             <div>info@illut.io</div>
                         </div>
                     </div>
-                    <div class="infoLinks">
-                        <span class="infoLink">
+                    <div class="infoLinks hidden-xs">
+                        <div class="infoLink">
                             <a class="CSlink" href="http://illut.io">illtu.io</a>
-                        </span>
-                        <span class="infoLink">
+                        </div>
+                        <div class="infoLink">
                             <a class="CSlink" href="mailto:info@illut.io">Contact</a>
-                        </span>
-                        <span class="infoLink">
-                            <a class="CSlink" href="#myModal" data-toggle="modal">Report bugs</a>
-                        </span>
+                        </div>
+                        <div class="infoLink">
+                            <a class="CSlink" href="#myModal" data-toggle="modal">Report a problem</a>
+                        </div>
                     </div>
                 </div><!-- /.sidebar -->
                 <!--
@@ -94,7 +94,12 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Título</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
+                                            </a>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
+                                            </a>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -121,7 +126,12 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Título 2</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
+                                            </a>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
+                                            </a>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -129,14 +139,14 @@
                                             </div>
                                         </div>
                                         <div class="targetInfo">
-                                            <div>
-                                                www.illut.io
+                                            <div class="info">
+                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
                                             </div>
-                                            <div>
-                                                facebook.com/illutio
+                                            <div class="info">
+                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
                                             </div>
-                                            <div>
-                                                twitter.com/illutio
+                                            <div class="info">
+                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
                                             </div>
                                             <div>
                                                 (555) 555-5555
@@ -148,7 +158,12 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Título 3</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
+                                            </a>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
+                                            </a>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -156,14 +171,14 @@
                                             </div>
                                         </div>
                                         <div class="targetInfo">
-                                            <div>
-                                                www.illut.io
+                                            <div class="info">
+                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
                                             </div>
-                                            <div>
-                                                facebook.com/illutio
+                                            <div class="info">
+                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
                                             </div>
-                                            <div>
-                                                twitter.com/illutio
+                                            <div class="info">
+                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
                                             </div>
                                             <div>
                                                 (555) 555-5555
@@ -175,7 +190,12 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Título 4</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
+                                            </a>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
+                                            </a>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -183,14 +203,14 @@
                                             </div>
                                         </div>
                                         <div class="targetInfo">
-                                            <div>
-                                                www.illut.io
+                                            <div class="info">
+                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
                                             </div>
-                                            <div>
-                                                facebook.com/illutio
+                                            <div class="info">
+                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
                                             </div>
-                                            <div>
-                                                twitter.com/illutio
+                                            <div class="info">
+                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
                                             </div>
                                             <div>
                                                 (555) 555-5555
@@ -202,7 +222,12 @@
                                     <div class="targetContainer">
                                         <div class="targetProduct">
                                             <strong>Título 5</strong>
-                                            <span id="editTarget" class="glyphicon glyphicon-pencil cursorLink" style="float:right;"></span>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
+                                            </a>
+                                            <a class="CSlink" href="target.php?p=example">
+                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
+                                            </a>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -211,13 +236,13 @@
                                         </div>
                                         <div class="targetInfo">
                                             <div class="info">
-                                                www.illut.io
+                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
                                             </div>
                                             <div class="info">
-                                                facebook.com/illutio
+                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
                                             </div>
                                             <div class="info">
-                                                twitter.com/illutio
+                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
                                             </div>
                                             <div class="info">
                                                 (555) 555-5555
@@ -226,6 +251,17 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="infoLinks visible-xs">
+                        <div class="infoLink">
+                            <a class="CSlink" href="http://illut.io">illtu.io</a>
+                        </div>
+                        <div class="infoLink">
+                            <a class="CSlink" href="mailto:info@illut.io">Contact</a>
+                        </div>
+                        <div class="infoLink">
+                            <a class="CSlink" href="#myModal" data-toggle="modal">Report a problem</a>
                         </div>
                     </div>
                 </div>
@@ -241,7 +277,7 @@
                     -->
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Report a bug</h4>
+                        <h4 class="modal-title">Report a problem</h4>
                     </div>
                     <!--
                         Body
@@ -249,15 +285,21 @@
                     <div class="modal-body">
                         <form class="form-horizontal" role="form" action="reportBug.php" method="post">
                             <div class="form-group">
-                                <label for="inputProblem" class="col-lg-2 control-label">Problem:</label>
-                                <div class="col-lg-10">
+                                <label for="inputProblem" class="col-sm-3 control-label">Problem:</label>
+                                <div class="col-sm-9">
                                     <input type="text" class="form-control" id="inputProblem" name="inputProblem" placeholder="What's your problem?">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputDetail" class="col-lg-2 control-label">Description:</label>
-                                <div class="col-lg-10">
-                                    <textarea class="form-control" id="inputDetail" name="inputDetail" rows="3" placeholder="Can you describe the problem?"></textarea>
+                                <label for="detail" class="col-sm-3 control-label">Description:</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" id="detail" name="detail" rows="3" placeholder="Can you give us more details?"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="steps" class="col-sm-3 control-label">Steps:</label>
+                                <div class="col-sm-9">
+                                    <textarea class="form-control" id="steps" name="steps" rows="3" placeholder="Tell us the steps to reproduce the problem..."></textarea>
                                 </div>
                             </div>
                         </form>
@@ -267,7 +309,7 @@
                     -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Send report</button>
+                        <button type="submit" class="btn btn-primary">Send</button>
                     </div>
                     
                 </div><!-- /.modal-content -->
@@ -280,6 +322,10 @@
         <script>
             $("img").on("dragstart", function(event){
                 event.preventDefault();
+            });
+
+            $(function () {
+                $("[rel='tooltip']").tooltip();
             });
         </script>
         

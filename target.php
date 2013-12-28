@@ -49,7 +49,7 @@
 		</header>
 		
 		<div class="container CScontenedor">
-            <div class="row">
+            <div class="row-fluid">
             	<!--
                 SIDEBAR
                 -->
@@ -209,11 +209,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
             </div>	
 		</div><!-- /.container -->
-		
         <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.form.js"></script>
