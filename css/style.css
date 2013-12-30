@@ -145,9 +145,9 @@ a.signIn, button.signIn{
 }
 
 .targetContainer{
-	background: 	#eaedf2;
+	background: 	#edf5fa;
 	border-radius: 	.25em;
-	max-height: 	350px;
+	/*max-height: 	400px;*/
 	margin-top: 	1em;
 	border: 		1px solid #AAA;
 }
@@ -174,7 +174,15 @@ a.signIn, button.signIn{
 }
 
 .targetProduct{
-	padding: .5em;
+	padding: 	.5em;
+	width: 		80%;
+}
+
+.actionButtons{
+	margin-right: .5em;
+	float:		right;
+	width:		20%;
+	margin-top:	-1.9em;
 }
 
 .targetInfo{
@@ -186,14 +194,17 @@ a.signIn, button.signIn{
 }
 
 .infoLink{
-	display: inline-block;
-	font-size: 12px;
-	margin: 0 .5em 0 0;
+	display: 	inline-block;
+	font-size: 	12px;
+	margin: 	0 .5em 0 0;
 }
-.editTargetButton{
-	/*margin-left: 1em;*/
+
+.targetActions{
+	padding: 	1em;
+	border-top: 1px solid #AAA;
 }
-.editProfileButton, .removeTargetButton, .editTargetButton{
-	float: right;
-	margin-left: 1em;
+
+.editProfileButton{
+	float: 			right;
+	margin-left: 	1em;
 }

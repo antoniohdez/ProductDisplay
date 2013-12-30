@@ -92,14 +92,42 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        <div class="targetProduct">
-                                            <strong>Título</strong>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
-                                            </a>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
-                                            </a>
+                                        <div class="targetProduct info">
+                                            Product name - overflow text
+                                        </div>
+                                        <div class="text-right actionButtons">
+                                            <span class="glyphicon glyphicon-edit" style="margin-right:.25em"></span>
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </div>
+                                        <div class="targetImageContainer">
+                                            <div class="vertical">
+                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                                            </div>
+                                        </div>
+                                        <div class="targetInfo">
+                                            <div class="info">
+                                                <a class="CSlink" href="http://www.illut.io">www.illut.iowww.illut.iowww.illut.io</a>
+                                            </div>
+                                            <div class="info">
+                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutioillutioillutioillutio</a>
+                                            </div>
+                                            <div class="info">
+                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutioillutioillutioillutioillutio</a>
+                                            </div>
+                                            <div class="info">
+                                                (555) 555-5555
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="targetContainer">
+                                        <div class="targetProduct info">
+                                            Product name
+                                        </div>
+                                        <div class="text-right actionButtons">
+                                            <span class="glyphicon glyphicon-edit" style="margin-right:.25em"></span>
+                                            <span class="glyphicon glyphicon-remove"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -124,110 +152,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        <div class="targetProduct">
-                                            <strong>Título 2</strong>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
-                                            </a>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
-                                            </a>
+                                        <div class="targetProduct info">
+                                            Product name
                                         </div>
-                                        <div class="targetImageContainer">
-                                            <div class="vertical">
-                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
-                                            </div>
-                                        </div>
-                                        <div class="targetInfo">
-                                            <div class="info">
-                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
-                                            </div>
-                                            <div>
-                                                (555) 555-5555
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="targetContainer">
-                                        <div class="targetProduct">
-                                            <strong>Título 3</strong>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
-                                            </a>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
-                                            </a>
-                                        </div>
-                                        <div class="targetImageContainer">
-                                            <div class="vertical">
-                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
-                                            </div>
-                                        </div>
-                                        <div class="targetInfo">
-                                            <div class="info">
-                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
-                                            </div>
-                                            <div>
-                                                (555) 555-5555
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="targetContainer">
-                                        <div class="targetProduct">
-                                            <strong>Título 4</strong>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
-                                            </a>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
-                                            </a>
-                                        </div>
-                                        <div class="targetImageContainer">
-                                            <div class="vertical">
-                                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
-                                            </div>
-                                        </div>
-                                        <div class="targetInfo">
-                                            <div class="info">
-                                                <a class="CSlink" href="http://www.illut.io">www.illut.io</a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutio</a>
-                                            </div>
-                                            <div class="info">
-                                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutio</a>
-                                            </div>
-                                            <div>
-                                                (555) 555-5555
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="targetContainer">
-                                        <div class="targetProduct">
-                                            <strong>Título 5</strong>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="removeTarget" class="glyphicon glyphicon-remove cursorLink removeTargetButton" rel="tooltip" title="Remove"></span>
-                                            </a>
-                                            <a class="CSlink" href="target.php?p=example">
-                                                <span id="editTarget" class="glyphicon glyphicon-edit cursorLink editTargetButton" rel="tooltip" title="Edit"></span>
-                                            </a>
+                                        <div class="text-right actionButtons">
+                                            <span class="glyphicon glyphicon-edit" style="margin-right:.25em"></span>
+                                            <span class="glyphicon glyphicon-remove"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -315,7 +245,6 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-
 		
         <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>
