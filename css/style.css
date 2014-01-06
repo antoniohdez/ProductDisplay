@@ -18,6 +18,27 @@ body{
 	cursor:				default;
 }
 
+.ribbon {
+  background-color: #02679d;
+  overflow: hidden;
+  position: absolute;
+  left: -2.5em;
+  top: 50px;
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.ribbon a {
+  border: 1px solid #88F;
+  color: #fff;
+  display: block;
+  font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+  margin: 0.05em 0;
+  padding: 0.5em 3.5em;
+  text-align: center;
+  text-decoration: none;
+}
+
 .CScontenedor{
 	margin-top:	70px;	
 }
@@ -145,7 +166,7 @@ a.signIn, button.signIn{
 }
 
 .targetContainer{
-	background: 	#edf5fa;
+	background: 	#eaedf2;
 	border-radius: 	.25em;
 	/*max-height: 	400px;*/
 	margin-top: 	1em;
@@ -173,9 +194,10 @@ a.signIn, button.signIn{
 	max-height: 150px;
 }
 
-.targetProduct{
+.targetTitle{
 	padding: 	.5em;
 	width: 		80%;
+	font-weight: bold;
 }
 
 .actionButtons{
@@ -183,6 +205,16 @@ a.signIn, button.signIn{
 	float:		right;
 	width:		20%;
 	margin-top:	-1.9em;
+}
+
+.editButton > a{
+	margin-right:.25em;
+	color: #000;
+	text-decoration: none;
+}
+
+.removeButton{
+	color: #F00;
 }
 
 .targetInfo{

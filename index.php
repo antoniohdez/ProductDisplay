@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 		<title>Home - ProductDisplay</title>
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap2.css" rel="stylesheet">
@@ -15,6 +15,11 @@
     </head>
 
 	<body>
+        <!--BETA-->
+        <div class="ribbon">
+            <a href="#" rel="me">BETA</a>
+        </div>
+        <!--/BETA-->
 		<header class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -23,7 +28,8 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.php">ProductDisplay</a>
+                        <a class="navbar-brand" href="index.php">ProductDisplay</a>
+					
 				</div>
 				<div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -41,7 +47,6 @@
 				</div><!--/.nav-collapse -->
 			</div>
 		</header>
-		
 		<div class="container CScontenedor">
             
             <div class="row-fluid">
@@ -92,12 +97,14 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        <div class="targetProduct info">
+                                        <div class="targetTitle info">
                                             Product name - overflow text
                                         </div>
                                         <div class="text-right actionButtons">
-                                            <span class="glyphicon glyphicon-edit" style="margin-right:.25em"></span>
-                                            <span class="glyphicon glyphicon-remove"></span>
+                                            <span class="editButton">
+                                                <a href="target.php?p" class="glyphicon glyphicon-edit"></a>
+                                            </span>
+                                            <span class="glyphicon glyphicon-remove removeButton cursorLink"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -122,12 +129,14 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        <div class="targetProduct info">
-                                            Product name
+                                        <div class="targetTitle info">
+                                            Product name - overflow text
                                         </div>
                                         <div class="text-right actionButtons">
-                                            <span class="glyphicon glyphicon-edit" style="margin-right:.25em"></span>
-                                            <span class="glyphicon glyphicon-remove"></span>
+                                            <span class="editButton">
+                                                <a href="target.php?p" class="glyphicon glyphicon-edit"></a>
+                                            </span>
+                                            <span class="glyphicon glyphicon-remove removeButton cursorLink"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">
@@ -152,12 +161,14 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="targetContainer">
-                                        <div class="targetProduct info">
-                                            Product name
+                                        <div class="targetTitle info">
+                                            Product name - overflow text
                                         </div>
                                         <div class="text-right actionButtons">
-                                            <span class="glyphicon glyphicon-edit" style="margin-right:.25em"></span>
-                                            <span class="glyphicon glyphicon-remove"></span>
+                                            <span class="editButton">
+                                                <a href="target.php?p" class="glyphicon glyphicon-edit"></a>
+                                            </span>
+                                            <span class="glyphicon glyphicon-remove removeButton cursorLink"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">

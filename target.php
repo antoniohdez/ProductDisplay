@@ -21,6 +21,11 @@
     </head>
 
 	<body>
+        <!--BETA-->
+        <div class="ribbon">
+            <a href="#" rel="me">BETA</a>
+        </div>
+        <!--/BETA-->
 		<header class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
