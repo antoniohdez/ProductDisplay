@@ -1,3 +1,7 @@
+<?php
+	require("core/driverUser.php");
+	validateSession("login");
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -37,6 +41,7 @@
 				        	Product Display
 				        </div>
 						<form class="form-signin" action="session.php?login" method="post">
+							
 							<div id="message" class="alert alert-warning alert-dismissable">
 	                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					            <strong>WARNING!</strong> DESIGN TEST.
@@ -45,7 +50,11 @@
 	                        <input id="email" type="text" name="email" class="form-control firstInput" placeholder="Email" autofocus required>
 				        	
 	                        <input type="password" name="password" class="form-control lastInput" placeholder="Password" required>
-				        	
+				        	<div class="checkbox">
+						    <label>
+						      <input type="checkbox" name="sessionTime">Keep me logged in
+						    </label>
+						  </div>
 	                        <button type="submit" class="btn btn-lg btn-primary btn-block signIn">Log In</button>
 	                        <!--<button class="btn btn-lg btn-primary btn-block signIn" type="submit">Log In</button>-->
 				    	</form>

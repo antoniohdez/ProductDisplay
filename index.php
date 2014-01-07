@@ -1,3 +1,7 @@
+<?php
+    require("core/driverUser.php");
+    validateSession();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -41,7 +45,7 @@
                     <ul class="nav navbar-nav navbar-right">
       					
       					<li >
-        					<a href="logout.php" id="user" data-container="body">Log Out</a>
+        					<a href="session.php?logout" id="user" data-container="body">Log Out</a>
       					</li>
     				</ul> 
 				</div><!--/.nav-collapse -->

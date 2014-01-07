@@ -1,3 +1,7 @@
+<?php
+    require("core/driverUser.php");
+    validateSession();
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
