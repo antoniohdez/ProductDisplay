@@ -14,14 +14,15 @@
 				$hashedPassword = $result["password"];
 				if(crypt($password, $hashedPassword) == $hashedPassword){
 					session_start();
-					$_SESSION["userInfo"]["id"] = $result["id"];
-					$_SESSION["userInfo"]["name"] = $result["name"];
+					$_SESSION["userInfo"]["id"] 	 = $result["id"];
+					$_SESSION["userInfo"]["name"] 	 = $result["name"];
 					$_SESSION["userInfo"]["country"] = $result["country"];
-					$_SESSION["userInfo"]["city"] = $result["city"];
-					$_SESSION["userInfo"]["email"] = $result["email"];
+					$_SESSION["userInfo"]["city"] 	 = $result["city"];
+					$_SESSION["userInfo"]["email"] 	 = $result["email"];
 
 					$_SESSION["session"]["productDisplay"] = true;
-					$_SESSION["session"]["lastActivity"] = time();
+					$_SESSION["session"]["lastActivity"]   = time();
+					
 					if(isset($_POST["sessionTime"])){
 						$_SESSION["session"]["expirationTime"] = 60 * 60 * 24;//Session time, 1 day without activity.
 					}else{
@@ -41,8 +42,8 @@
 	else if(isset($_GET["logout"])){
 		session_start();
 		session_destroy();
-		if($_GET["logout"] === "sessionExpired"){
-			header("Location: login.php?sessionExpired");
+		if($_GET["logout"] === "expiredSession"){
+			header("Location: login.php?warning=expiredSession");
 		}else{
 			header("Location: login.php");
 		}
