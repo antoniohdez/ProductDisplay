@@ -68,6 +68,28 @@
 		}
 	}
 
+	function printProfileInfo(){
+		echo '	<div class="panel panel-primary shadow">
+	                <div class="panel-heading">
+	                    <h3 class="panel-title">
+	                        Profile
+	                        <a href="profile.php">
+	                            <span id="editProfile" class="glyphicon glyphicon-pencil cursorLink editProfileButton" rel="tooltip" title="Edit" data-placement="right"></span>
+	                        </a>
+	                    </h3>
+	                </div>
+	                <div>
+	                    <img src="'.$_SESSION["userInfo"]["pathLogo"].'" style="width:100%" alt="Logo image">
+	                </div>
+	                <div class="panel-body">
+	                    <div><div class="infoTitle" contenteditable>'.$_SESSION["userInfo"]["name"].'</div></div>
+	                    <div>'.$_SESSION["userInfo"]["country"].'</div>
+	                    <div>'.$_SESSION["userInfo"]["city"].'</div>
+	                    <div>'.$_SESSION["userInfo"]["email"].'</div>
+	                </div>
+	            </div>';					
+	}
+
 	function printTagets(){
 
 	}

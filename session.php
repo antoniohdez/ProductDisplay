@@ -19,6 +19,7 @@
 					$_SESSION["userInfo"]["country"] = $result["country"];
 					$_SESSION["userInfo"]["city"] 	 = $result["city"];
 					$_SESSION["userInfo"]["email"] 	 = $result["email"];
+					$_SESSION["userInfo"]["pathLogo"]= $result["path_logo"];
 
 					$_SESSION["session"]["productDisplay"] = true;
 					$_SESSION["session"]["lastActivity"]   = time();

@@ -35,25 +35,9 @@
                 SIDEBAR
                 -->
                 <div class="col-md-3">
-                	<div class="panel panel-primary shadow">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                Profile
-                                <a href="profile.php">
-                                    <span id="editProfile" class="glyphicon glyphicon-pencil cursorLink editProfileButton" rel="tooltip" title="Edit" data-placement="right"></span>
-                                </a>
-                            </h3>
-                        </div>
-                        <div>
-                            <img src="img/illutio.png" style="width:100%" alt="Logo image">
-                        </div>
-                        <div class="panel-body">
-                            <div><div class="infoTitle" contenteditable>Illutio</div></div>
-                            <div>México</div>
-                            <div>Zapopan</div>
-                            <div>info@illut.io</div>
-                        </div>
-                    </div>
+                	<?php
+                        printProfileInfo();
+                    ?>
                     <div class="infoLinks hidden-xs">
                         <div class="infoLink">
                             <a class="CSlink" href="http://illut.io">illtu.io</a>
@@ -83,9 +67,9 @@
                                         </div>
                                         <div class="text-right actionButtons">
                                             <span class="editButton">
-                                                <a href="target.php?p" class="glyphicon glyphicon-edit"></a>
+                                                <a href="target.php?p" class="glyphicon glyphicon-edit" rel="tooltip" title="Edit"></a>
                                             </span>
-                                            <span class="glyphicon glyphicon-remove removeButton cursorLink"></span>
+                                            <span class="glyphicon glyphicon-remove removeButton cursorLink" rel="tooltip" title="Delete"></span>
                                         </div>
                                         <div class="targetImageContainer">
                                             <div class="vertical">

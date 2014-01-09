@@ -63,8 +63,8 @@
                                     <input type="text" class="form-control" name="twitter" placeholder="twitter.com/MyAccount">
                                 </div>
                                 <div class="form-group">
-                                    <label for="telephone">Telephone</label>
-                                    <input type="text" class="form-control" name="telephone" placeholder="(555) 555-5555">
+                                    <label for="telephone">Phone number</label>
+                                    <input type="text" class="form-control" name="phone" placeholder="(555) 555-5555">
                                 </div>
                             </form>
                             <hr style="margin-top: 2em">
