@@ -11,13 +11,7 @@
 	else if(isset($_FILES["video"])){
 		$output_dir = "uploadedMedia/video/";
 		session_start();
-		if(file_exists($output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["video"]["name"])){
-			echo "The file has been already uploaded";
-		}
-		else{
-			move_uploaded_file($_FILES["video"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["video"]["name"]);
-			echo "Uploaded File :".$_FILES["video"]["name"];
-		}
+		move_uploaded_file($_FILES["video"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["video"]["name"]);
 	}
 	else if(isset($_POST["productName"])){
 		$productName = $_POST["productName"];

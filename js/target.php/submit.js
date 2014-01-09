@@ -1,4 +1,23 @@
 $(document).ready(function(){
+    var optionsForm = { 
+        beforeSend: function() 
+        {
+            //$("input").prop('disabled', true);
+        },
+        success: function() 
+        {
+            $("#targetFormVideo").submit();
+            $("#targetFormAudio").submit();
+        },
+        complete: function(response) 
+        {
+            console.log(response);
+        },
+        error: function()
+        {
+            alert("Error");
+        }
+    };
     var optionsVideo = { 
         beforeSend: function() 
         {
@@ -28,12 +47,11 @@ $(document).ready(function(){
         },
         complete: function(response) 
         {
-            //$("#message").html("<font color='green'>"+response.responseText+"</font>");
+            //console.log(response);
         },
         error: function()
         {
             alert("Error");
-            //$("#message").html("<font color='red'> ERROR: unable to upload files</font>");
         }
     };
     var optionsAudio = { 
@@ -66,20 +84,21 @@ $(document).ready(function(){
         },
         complete: function(response) 
         {
-            //$("#message").html("<font color='green'>"+response.responseText+"</font>");
+            //console.log(response);
         },
         error: function()
         {
-            //$("#message").html("<font color='red'> ERROR: unable to upload files</font>");
+            
         }
-    }; 
+    };
+    $("#targetForm").ajaxForm(optionsForm); 
     $("#targetFormVideo").ajaxForm(optionsVideo);
     $("#targetFormAudio").ajaxForm(optionsAudio);
 });
 
 function submit(){
-    //$("#targetForm").submit();
-    $("#targetFormVideo").submit();
-    $("#targetFormAudio").submit();
+    $("#targetForm").submit();
+    //$("#targetFormVideo").submit();
+    //$("#targetFormAudio").submit();
     //$("#targetFormImage").submit();
 }
