@@ -1,23 +1,4 @@
 $(document).ready(function(){
-    var optionsForm = { 
-        beforeSend: function() 
-        {
-            //$("input").prop('disabled', true);
-        },
-        success: function() 
-        {
-            $("#targetFormVideo").submit();
-            $("#targetFormAudio").submit();
-        },
-        complete: function(response) 
-        {
-            console.log(response);
-        },
-        error: function()
-        {
-            alert("Error");
-        }
-    };
     var optionsVideo = { 
         beforeSend: function() 
         {
@@ -91,13 +72,12 @@ $(document).ready(function(){
             
         }
     };
-    $("#targetForm").ajaxForm(optionsForm); 
     $("#targetFormVideo").ajaxForm(optionsVideo);
     $("#targetFormAudio").ajaxForm(optionsAudio);
 });
 
 function submit(){
-    $("#targetForm").submit();
+    //$("#targetForm").submit();
     //$("#targetFormVideo").submit();
     //$("#targetFormAudio").submit();
     //$("#targetFormImage").submit();

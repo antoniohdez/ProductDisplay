@@ -66,6 +66,9 @@
                                     <label for="telephone">Phone number</label>
                                     <input type="text" class="form-control" name="phone" placeholder="(555) 555-5555">
                                 </div>
+                                <button id="submit" class="btn btn-primary btn-block" onclick="submit()">
+                                Submit
+                            </button>
                             </form>
                             <hr style="margin-top: 2em">
 
