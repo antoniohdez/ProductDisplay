@@ -2,6 +2,12 @@
 	require("core/handlerDB.php");
 	$output_dir = "";
 	$db = new handlerDB("productDisplay");
+	if(isset($_FILES["image"])){
+		$output_dir = "uploadedMedia/image/";
+		session_start();
+		move_uploaded_file($_FILES["image"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["image"]["name"]);
+	   	echo "Uploaded File :".$_FILES["image"]["name"];
+	}
 	if(isset($_FILES["audio"])){
 		$output_dir = "uploadedMedia/audio/";
 		session_start();
@@ -29,6 +35,6 @@
 		$query->bindParam(':twitter', $twitter, PDO::PARAM_STR);
 		$query->bindParam(':phone', $phoneNum, PDO::PARAM_STR);
 		$query->execute();
+		echo $db->lastInsertId(); //Return the id from the current connection
 	}
-
 ?>

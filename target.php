@@ -66,9 +66,9 @@
                                     <label for="telephone">Phone number</label>
                                     <input type="text" class="form-control" name="phone" placeholder="(555) 555-5555">
                                 </div>
-                                <button id="submit" class="btn btn-primary btn-block" onclick="submit()">
-                                Submit
-                            </button>
+                                <button id="submitHidden" class="btn btn-primary btn-block" style="display: none;">
+                                    Submit
+                                </button>
                             </form>
                             <hr style="margin-top: 2em">
 
@@ -155,7 +155,7 @@
                             <?php } ?>
 
                             <hr style="margin-top: 2em">
-                            <button id="submit" class="btn btn-primary btn-block" onclick="submit()">
+                            <button id="submit" class="btn btn-primary btn-block">
                                 Submit
                             </button>
                         </div>
@@ -171,13 +171,13 @@
                             <h3 class="panel-title">Image</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="targetFormImage" role="form" action="upload.php" method="post" enctype="multipart/form-data">
+                            <form id="targetFormImage" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <!--<label for="image">Image</label>-->
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">
-                                                Browse… <input id="image" name="image" type="file" onchange="return ShowImagePreview(this.files);" >
+                                                Browse… <input id="image" name="image" type="file" onchange="return ShowImagePreview(this.files);" required>
                                             </span>
                                         </span>
                                         <input type="text" class="form-control" readonly="" value="Select a file...">
