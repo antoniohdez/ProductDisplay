@@ -90,7 +90,57 @@
 	            </div>';					
 	}
 
-	function printTagets(){
+	function printTargets(){
+		require("core/handlerDB.php");
+		$db = new handlerDB("productDisplay");
+		$statement = "SELECT * FROM target WHERE user_id = :id";
+		$query = $db->prepare($statement);
+		$query->bindParam(':id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
+		$query->execute();
 
+		$targets = $query->fetchAll(PDO::FETCH_ASSOC);
+		foreach ($targets as $target) {
+			echo $target["name"];
+			echo $target["path_image"];
+			echo $target["url"];
+			echo $target["facebook"];
+			echo $target["twitter"];
+			echo $target["phone"];
+			echo '	<div class="col-md-4">
+                    <div class="targetContainer">
+                        <div class="targetTitle info">'.
+                            $target["name"]
+                        .'</div>
+                        <div class="text-right actionButtons">
+                            <span class="editButton">
+                                <a href="target.php?p" class="glyphicon glyphicon-edit" rel="tooltip" title="Edit"></a>
+                            </span>
+                            <span class="glyphicon glyphicon-remove removeButton cursorLink" rel="tooltip" title="Delete"></span>
+                        </div>
+                        <div class="targetImageContainer">
+                            <div class="vertical">
+                                <img src="uploadedMedia/image/CreatorsStudio logo Demo.jpg" class="targetImage" alt="Target image">
+                            </div>
+                        </div>
+                        <div class="targetInfo">
+                            <div class="info">
+                                <a class="CSlink" href="http://www.illut.io">www.illut.iowww.illut.iowww.illut.io</a>
+                            </div>
+                            <div class="info">
+                                <a class="CSlink" href="http://facebook.com/illutio">facebook.com/illutioillutioillutioillutio</a>
+                            </div>
+                            <div class="info">
+                                <a class="CSlink" href="http://twitter.com/illutio">twitter.com/illutioillutioillutioillutioillutio</a>
+                            </div>
+                            <div class="info">
+                                (555) 555-5555
+                            </div>
+                        </div>
+                    </div>
+                </div>';
+		}
+
+	
+		
 	}
 ?>

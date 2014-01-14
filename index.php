@@ -60,6 +60,9 @@
                         </div>
                         <div class="panel-body" style="padding-top:0">
                             <div class="row">
+                                <?php
+                                    printTargets();
+                                ?>
                                 <div class="col-md-4">
                                     <div class="targetContainer">
                                         <div class="targetTitle info">
