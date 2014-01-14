@@ -19,6 +19,9 @@ $(document).ready(function(){
                 });
             },
             success:function(response){
+                $("#imageHidden").val(response);
+                $("#audioHidden").val(response);
+                $("#videoHidden").val(response);
                 $("#targetFormImage").submit();
                 $("#targetFormAudio").submit();
                 $("#targetFormVideo").submit();
@@ -61,7 +64,7 @@ $(document).ready(function(){
         },
         error: function()
         {
-            
+            alert("Error");   
         }
     };
     var optionsVideo = { 
@@ -105,10 +108,6 @@ $(document).ready(function(){
         {
             
         },
-        uploadProgress: function(event, position, total, percentComplete) 
-        {
-            
-        },
         success: function() 
         {
             
@@ -119,7 +118,7 @@ $(document).ready(function(){
         },
         error: function()
         {
-            
+            alert("Error");
         }
     };
     $("#targetFormAudio").ajaxForm(optionsAudio);

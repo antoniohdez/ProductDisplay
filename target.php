@@ -48,7 +48,7 @@
                             <form id="targetForm" role="form" action="targetUpload.php" method="post">
                                 <div class="form-group">
                                     <label for="productName">Product name*</label>
-                                    <input type="text" class="form-control" name="productName" placeholder="Product" autofocus required>
+                                    <input type="text" class="form-control" name="productName" placeholder="My Product" autofocus required>
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
@@ -80,7 +80,7 @@
                                     <input id="audio" type="file" class="form-control" name="audio">
                                     -->
                                     <label for="audio">Audio</label>
-
+                                        <input id="audioHidden" name="audioId" type="hidden">
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">
@@ -122,6 +122,7 @@
                                     <input id="video" type="file" class="form-control" name="video">
                                     -->
                                     <label for="video">Video</label>
+                                        <input id="videoHidden" name="videoId" type="hidden">
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">
@@ -156,7 +157,7 @@
 
                             <hr style="margin-top: 2em">
                             <button id="submit" class="btn btn-primary btn-block">
-                                Submit
+                                Save target
                             </button>
                         </div>
                     </div>
@@ -174,6 +175,7 @@
                             <form id="targetFormImage" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <!--<label for="image">Image</label>-->
+                                    <input id="imageHidden" name="imageId" type="hidden">
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">

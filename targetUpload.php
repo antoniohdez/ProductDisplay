@@ -1,23 +1,55 @@
 <?php
 	require("core/handlerDB.php");
+
+	function moveFile($fileType = "image"){
+		session_start(); 
+		$output_dir = "uploadedMedia/".$fileType."/";
+		$file_name = $_FILES[$fileType]["name"];
+		while(file_exists($output_dir.$_SESSION["userInfo"]["id"]."-".$file_name)){
+			$file_name = "(1)".$file_name;
+		}
+		$path = $output_dir.$_SESSION["userInfo"]["id"]."-".$file_name;
+		move_uploaded_file($_FILES[$fileType]["tmp_name"], $path);
+		return $path;
+	}
+
 	$output_dir = "";
 	$db = new handlerDB("productDisplay");
 	if(isset($_FILES["image"])){
-		$output_dir = "uploadedMedia/image/";
-		session_start();
-		move_uploaded_file($_FILES["image"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["image"]["name"]);
-	   	echo "Uploaded File :".$_FILES["image"]["name"];
+		$path = moveFile("image");
+		$id = $_POST["imageId"];
+		$statement = "UPDATE target SET path_image = :image WHERE id=:id";
+		$query = $db->prepare($statement);
+		$query->bindParam(':image', $path, PDO::PARAM_STR);
+		$query->bindParam(':id', $id, PDO::PARAM_STR);
+		$query->execute();
 	}
 	if(isset($_FILES["audio"])){
+		$path = moveFile("audio");
+		$id = $_POST["audioId"];
+		$statement = "UPDATE target SET path_audio = :audio WHERE id=:id";
+		$query = $db->prepare($statement);
+		$query->bindParam(':audio', $path, PDO::PARAM_STR);
+		$query->bindParam(':id', $id, PDO::PARAM_STR);
+		$query->execute();
+		/*
 		$output_dir = "uploadedMedia/audio/";
-		session_start();
 		move_uploaded_file($_FILES["audio"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["audio"]["name"]);
 	   	echo "Uploaded File :".$_FILES["audio"]["name"];
+	   	*/
 	}
 	else if(isset($_FILES["video"])){
+		$path = moveFile("video");
+		$id = $_POST["videoId"];
+		$statement = "UPDATE target SET path_video = :video WHERE id=:id";
+		$query = $db->prepare($statement);
+		$query->bindParam(':video', $path, PDO::PARAM_STR);
+		$query->bindParam(':id', $id, PDO::PARAM_STR);
+		$query->execute();
+		/*
 		$output_dir = "uploadedMedia/video/";
-		session_start();
 		move_uploaded_file($_FILES["video"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["video"]["name"]);
+		*/
 	}
 	else if(isset($_POST["productName"])){
 		$productName = $_POST["productName"];
@@ -26,7 +58,7 @@
 		$twitter = $_POST["twitter"];
 		$phoneNum = $_POST["phone"];
 		session_start();
-		$statement = "INSERT INTO Target (user_id, name, url, facebook, twitter, phone) VALUES(:user_id, :name, :url, :facebook, :twitter, :phone)";
+		$statement = "INSERT INTO target (user_id, name, url, facebook, twitter, phone) VALUES(:user_id, :name, :url, :facebook, :twitter, :phone)";
 		$query = $db->prepare($statement);
 		$query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
 		$query->bindParam(':name', $productName, PDO::PARAM_STR);
