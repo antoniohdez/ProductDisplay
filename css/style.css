@@ -190,8 +190,10 @@ a.signIn, button.signIn{
 }
 
 .targetImage{
+	width: inherit;
 	max-width: 	100%;
 	max-height: 150px;
+
 }
 
 .targetTitle{

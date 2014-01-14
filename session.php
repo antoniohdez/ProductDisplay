@@ -27,7 +27,7 @@
 					if(isset($_POST["sessionTime"])){
 						$_SESSION["session"]["expirationTime"] = 60 * 60 * 24;//Session time, 1 day without activity.
 					}else{
-						$_SESSION["session"]["expirationTime"] = 60 * 20;//Session time, 20 min without activity.
+						$_SESSION["session"]["expirationTime"] = 60 * 30;//Session time, 30 min without activity.
 					}
 					header("Location: index.php");
 				}else{
