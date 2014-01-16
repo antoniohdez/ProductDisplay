@@ -1,5 +1,6 @@
 <?php
     require("core/driverUser.php");
+    require("core/view.php");
     validateSession();
 ?>
 <!DOCTYPE html>
@@ -24,31 +25,9 @@
             <a href="#" rel="me">BETA</a>
         </div>
         <!--/BETA-->
-		<header class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="index.php">ProductDisplay</a>
-				</div>
-				<div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-						<li><a href="index.php">Home</a></li>
-                        <li>
-                            <a href="target.php">Add target</a>
-                        </li>
-					</ul>            
-                    <ul class="nav navbar-nav navbar-right">
-      					<li>
-        					<a href="logout.php" id="user" data-container="body" >Log Out</a>
-      					</li>
-    				</ul> 
-				</div><!--/.nav-collapse -->
-			</div>
-		</header>
+		<?php
+            printHeader();
+        ?>
 		
 		<div class="container CScontenedor">
             <div class="row-fluid">
@@ -61,10 +40,10 @@
                             <h3 class="panel-title">Edit profile</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="profileForm" role="form" action="saveProfile.php" method="post">
+                            <form id="profileForm" role="form" action="profileUpdate.php" method="post">
                                 <div class="form-group">
                                     <label for="productName">Name*</label>
-                                    <input type="text" class="form-control" name="Name" placeholder="Name" autofocus required>
+                                    <input type="text" class="form-control" name="name" placeholder="Name" autofocus required>
                             	</div>
                                 <div class="form-group">
                                     <label for="email">Email*</label>
@@ -72,7 +51,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="country">Country*</label>
-                                    <select class="form-control" name="Country"> 
+                                    <select class="form-control" name="country" required> 
                                         <option value="" selected="selected">Select Country</option> 
                                         <option value="United States">United States</option> 
                                         <option value="United Kingdom">United Kingdom</option> 
@@ -321,12 +300,11 @@
                                     <label for="city">City</label>
                                     <input type="text" class="form-control" name="city" placeholder="My city">
                                 </div>
+                                <hr style="margin-top: 2em">
+                                <button id="submit" class="btn btn-primary btn-block" onclick="submit()">
+                                    Save profile
+                                </button>
                             </form>
-                            
-                            <hr style="margin-top: 2em">
-                            <button id="submit" class="btn btn-primary btn-block" onclick="submit()">
-                                Save profile
-                            </button>
                         </div>
                     </div>
                 </div><!-- /.sidebar -->

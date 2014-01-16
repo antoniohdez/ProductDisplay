@@ -25,7 +25,7 @@
 					$_SESSION["session"]["lastActivity"]   = time();
 					
 					if(isset($_POST["sessionTime"])){
-						$_SESSION["session"]["expirationTime"] = 60 * 60 * 24;//Session time, 1 day without activity.
+						$_SESSION["session"]["expirationTime"] = 60 * 60 * 24 * 2;//Session time, 2 day without activity.
 					}else{
 						$_SESSION["session"]["expirationTime"] = 60 * 30;//Session time, 30 min without activity.
 					}
