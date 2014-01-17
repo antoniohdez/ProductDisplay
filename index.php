@@ -139,6 +139,22 @@
             $(function () {
                 $("[rel='tooltip']").tooltip();
             });
+
+            function deleteTarget(id){
+                var info = {"id" : id}
+                $.ajax({
+                    data:   info,
+                    url:    "targetDelete.php",
+                    type:   "post",
+                    success:function(response){
+                        if(response === "Done"){
+                            $("#"+id).fadeOut(function(){
+                                $("#"+id).remove();
+                            });
+                        }
+                    }
+                });
+            }
         </script>
         
         </body>

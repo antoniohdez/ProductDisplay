@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    var video = audio = image = false;
     $("#submit").click(function(){
         $("#submitHidden").trigger("click");
     });
@@ -25,6 +26,11 @@ $(document).ready(function(){
                 $("#targetFormImage").submit();
                 $("#targetFormAudio").submit();
                 $("#targetFormVideo").submit();
+                setInterval(function(){
+                    if(video && audio && image){
+                        window.location.href = "index.php";
+                    }
+                },1000);
             }
         });
         return false;
@@ -60,7 +66,8 @@ $(document).ready(function(){
         },
         complete: function(response) 
         {
-            //console.log(response);
+            //console.log("Audio");
+            audio = true;
         },
         error: function()
         {
@@ -96,7 +103,8 @@ $(document).ready(function(){
         },
         complete: function(response) 
         {
-            //console.log(response);
+            //console.log("Video");
+            video = true;
         },
         error: function()
         {
@@ -114,7 +122,8 @@ $(document).ready(function(){
         },
         complete: function(response) 
         {
-
+            //console.log("Image");
+            image = true;
         },
         error: function()
         {
@@ -123,12 +132,5 @@ $(document).ready(function(){
     };
     $("#targetFormAudio").ajaxForm(optionsAudio);
     $("#targetFormVideo").ajaxForm(optionsVideo);
-    $("#targetFormImage").ajaxForm(optionsAudio);
+    $("#targetFormImage").ajaxForm(optionsImage);
 });
-
-function submit(){
-    //$("#targetForm").submit();
-    //$("#targetFormVideo").submit();
-    //$("#targetFormAudio").submit();
-    //$("#targetFormImage").submit();
-}

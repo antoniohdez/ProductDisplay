@@ -73,9 +73,9 @@
 	                <div class="panel-heading">
 	                    <h3 class="panel-title">
 	                        Profile
-	                        <a href="profile.php">
+	                        <!--<a href="profile.php">
 	                            <span id="editProfile" class="glyphicon glyphicon-pencil cursorLink editProfileButton" rel="tooltip" title="Edit" data-placement="right"></span>
-	                        </a>
+	                        </a>-->
 	                    </h3>
 	                </div>
 	                <div>
@@ -99,16 +99,16 @@
 		$query->execute();
 		$targets = $query->fetchAll(PDO::FETCH_ASSOC);
 		foreach ($targets as $target) {
-			echo '	<div class="col-md-4">
+			echo '	<div id='.$target["id"].' class="col-md-4">
 	                    <div class="targetContainer">
 	                        <div class="targetTitle info">
 	                        '.$target["name"].'
 	                        </div>
 	                        <div class="text-right actionButtons">
-	                            <span class="editButton">
+	                            <!--<span class="editButton">
 	                                <a href="target.php?p='.$target["id"].'" class="glyphicon glyphicon-edit" rel="tooltip" title="Edit"></a>
-	                            </span>
-	                            <span class="glyphicon glyphicon-remove removeButton cursorLink" rel="tooltip" title="Delete"></span>
+	                            </span>-->
+	                            <span class="glyphicon glyphicon-remove removeButton cursorLink" rel="tooltip" title="Delete" onClick="deleteTarget('.$target["id"].')"></span>
 	                        </div>
 	                        <div class="targetImageContainer">
 	                            <div class="vertical">
