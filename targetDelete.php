@@ -10,15 +10,20 @@
 		$query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
-		var_dump($result);
 		//Elimina los archivos
-		unlink($result["path_image"]);
-		unlink($result["path_audio"]);
-		unlink($result["path_video"]);
+		if(file_exists($result["path_image"])){
+			unlink($result["path_image"]);
+		}
+		if(file_exists($result["path_audio"])){
+			unlink($result["path_audio"]);
+		}
+		if(file_exists($result["path_video"])){
+			unlink($result["path_video"]);
+		}
 		
-		//=====//=====
-		//FALTA ELIMINAR LA IMAGEN GUARDADA EN CLOUD DATABASE DE VOFORIA
-		//=====//=====
+		//=====//=====//
+		//FALTA ELIMINAR LA IMAGEN GUARDADA EN CLOUD DATABASE DE VUFORIA
+		//=====//=====//
 
 		//Se elimina el registro de la base de datos una vez que los archivos se borraron.
 		$db = new handlerDB("productDisplay");

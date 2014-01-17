@@ -140,17 +140,22 @@
                 $("[rel='tooltip']").tooltip();
             });
 
-            function deleteTarget(id){
+            function deleteTarget(id){//Elimina el target con ajax
+                if(!confirm("DELETE TARGET?\nYou can't undo this action.")){
+                    return false;
+                }
                 var info = {"id" : id}
                 $.ajax({
                     data:   info,
                     url:    "targetDelete.php",
                     type:   "post",
                     success:function(response){
-                        if(response === "Done"){
-                            $("#"+id).fadeOut(function(){
+                        if(response === "Done"){//Si se elimino correctamente de la base de datos se elimina el codigo html del target
+                            $("#"+id).fadeOut(function(){//Realiza un fadeOut para que sea mas amigable al usuario y despues lo elimina
                                 $("#"+id).remove();
                             });
+                        }else{
+                            console.log(response);
                         }
                     }
                 });

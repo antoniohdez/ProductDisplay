@@ -5,6 +5,10 @@ $(document).ready(function(){
     });
 
     $("#targetForm").on("submit", function(){
+        if($("#image").val() == ""){
+            alert("Select an image");
+            return false;
+        }
         var $form = $(this);
         var $inputs = $form.find("input, select");
         var data = $form.serialize();
