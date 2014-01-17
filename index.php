@@ -155,13 +155,12 @@
                                 $("#"+id).remove();
                             });
                         }else{
-                            console.log(response);
+                            alert("This target can't be deleted");
                         }
                     }
                 });
             }
         </script>
-        
         </body>
   	</body>
 </html>

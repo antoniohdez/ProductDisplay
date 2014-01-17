@@ -52,15 +52,15 @@
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
-                                    <input type="text" class="form-control" name="url" placeholder="www.myCompany.com">
+                                    <input type="text" class="form-control" name="url" pattern="https?://.+" placeholder="http://www.myCompany.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>
-                                    <input type="text" class="form-control" name="facebook" placeholder="facebook.com/MyAccount">
+                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" placeholder="http://facebook.com/MyAccount">
                                 </div>
                                 <div class="form-group">
                                     <label for="twitter">Twitter</label>
-                                    <input type="text" class="form-control" name="twitter" placeholder="twitter.com/MyAccount">
+                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+"  placeholder="http://twitter.com/MyAccount">
                                 </div>
                                 <div class="form-group">
                                     <label for="telephone">Phone number</label>
