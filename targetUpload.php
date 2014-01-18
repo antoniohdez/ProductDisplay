@@ -16,6 +16,16 @@
 	$output_dir = "";
 	$db = new handlerDB("productDisplay");
 	if(isset($_FILES["image"])){
+
+		//=====//=====//
+		//FALTA AGREGAR LA IMAGEN AL CLOUD DATABASE DE VUFORIA
+		//=====//=====//
+		require("HTTP/Request2.php");
+
+		//=====//=====//
+		//
+		//=====//=====//
+
 		$path = moveFile("image");
 		$id = $_POST["imageId"];
 		$statement = "UPDATE target SET path_image = :image WHERE id=:id";
