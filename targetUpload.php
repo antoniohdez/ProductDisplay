@@ -32,11 +32,6 @@
 		$query->bindParam(':audio', $path, PDO::PARAM_STR);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
-		/*
-		$output_dir = "uploadedMedia/audio/";
-		move_uploaded_file($_FILES["audio"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["audio"]["name"]);
-	   	echo "Uploaded File :".$_FILES["audio"]["name"];
-	   	*/
 	}
 	else if(isset($_FILES["video"])){
 		$path = moveFile("video");
@@ -46,10 +41,6 @@
 		$query->bindParam(':video', $path, PDO::PARAM_STR);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
-		/*
-		$output_dir = "uploadedMedia/video/";
-		move_uploaded_file($_FILES["video"]["tmp_name"],$output_dir.$_SESSION["userInfo"]["id"]."-".$_FILES["video"]["name"]);
-		*/
 	}
 	else if(isset($_POST["productName"])){
 		$productName = $_POST["productName"];
