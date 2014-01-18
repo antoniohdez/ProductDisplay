@@ -155,7 +155,7 @@
                                 $("#"+id).remove();
                             });
                         }else{
-                            alert("This target can't be deleted");
+                            alert("This target can't be deleted\nPlease, try again!");
                         }
                     }
                 });
