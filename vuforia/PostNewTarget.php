@@ -9,8 +9,8 @@ require_once 'SignatureBuilder.php';
 class PostNewTarget{
 
 	//Server Keys
-	private $access_key 	= "[ server access key ]";
-	private $secret_key 	= "[ server secret key ]";
+	private $access_key 	= "346999f142802ecaf9b221bcb2fc1003228b8d97";
+	private $secret_key 	= "85334b6028015efca72c4a17d72870a7b944cb46";
 	
 	//private $targetId 		= "eda03583982f41cdbe9ca7f50734b9a1";
 	private $url 			= "https://vws.vuforia.com";
@@ -18,13 +18,19 @@ class PostNewTarget{
 	private $request;       // the HTTP_Request2 object
 	private $jsonRequestObject;
 	
-	private $targetName 	= "[ name ]";
-	private $imageLocation 	= "[ /path/file.ext ]";
+	private $targetName 	= "Prueba 2";
+	private $imageLocation 	= "UploadedMedia/image/1-Muse_logo.png";
 	
 	function PostNewTarget(){
 		
-		$this->jsonRequestObject = json_encode( array( 'width'=>320.0 , 'name'=>$this->targetName , 'image'=>$this->getImageAsBase64() , 'application_metadata'=>base64_encode("Vuforia test metadata") , 'active_flag'=>1 ) );
-
+		$this->jsonRequestObject = json_encode(array(
+			'width'=>600.0,
+			'name'=>$this->targetName,
+			'image'=>$this->getImageAsBase64(),
+			'application_metadata'=>base64_encode("Vuforia test metadata")
+			,'active_flag'=>1
+		));
+		//var_dump($this->jsonRequestObject);
 		$this->execPostNewTarget();
 
 	}
@@ -36,6 +42,7 @@ class PostNewTarget{
 		if( $file ){
 			
 			$file = base64_encode( $file );
+
 		}
 		
 		return $file;

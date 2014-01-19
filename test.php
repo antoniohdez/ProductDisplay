@@ -1,3 +1,4 @@
 <?php
-	require("HTTP/Request2.php");
+	require("vuforia/PostNewTarget.php");
+	$vuforiaRequest = new PostNewTarget();
 ?>
