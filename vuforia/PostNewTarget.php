@@ -55,8 +55,7 @@ class PostNewTarget{
 			$response = $this->request->send();
 			if (200 == $response->getStatus() || 201 == $response->getStatus() ) {
 				//echo $response->getBody();
-				$this->targetId = json_decode($response->getBody());
-				echo $this->targetId;
+				$this->targetId = json_decode($response->getBody(),true)["target_id"];
 			} else {
 				echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
 						$response->getReasonPhrase(). ' ' . $response->getBody();
@@ -64,6 +63,10 @@ class PostNewTarget{
 		} catch (HTTP_Request2_Exception $e) {
 			echo 'Error: ' . $e->getMessage();
 		}
+	}
+
+	public function get_target_id(){
+		return $this->targetId;
 	}
 
 	private function setHeaders(){

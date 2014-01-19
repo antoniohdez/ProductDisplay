@@ -70,7 +70,6 @@ $(document).ready(function(){
         },
         complete: function(response) 
         {
-            //console.log("Audio");
             audio = true;
         },
         error: function()
@@ -107,7 +106,6 @@ $(document).ready(function(){
         },
         complete: function(response) 
         {
-            //console.log("Video");
             video = true;
         },
         error: function()
@@ -116,19 +114,13 @@ $(document).ready(function(){
         }
     };
     var optionsImage = { 
-        beforeSend: function() 
-        {
-            
-        },
         success: function() 
         {
             
         },
         complete: function(response) 
         {
-            //console.log("Image");
             image = true;
-            //console.log(response);
         },
         error: function()
         {

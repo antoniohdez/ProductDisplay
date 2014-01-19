@@ -18,20 +18,26 @@
 	if(isset($_FILES["image"])){
 		$path = moveFile("image");
 		$id = $_POST["imageId"];
-		$statement = "UPDATE target SET path_image = :image WHERE id=:id";
-		$query = $db->prepare($statement);
-		$query->bindParam(':image', $path, PDO::PARAM_STR);
-		$query->bindParam(':id', $id, PDO::PARAM_STR);
-		$query->execute();
-		
-		$db = new handlerDB("productDisplay");
+
 		$statement = "SELECT name FROM target WHERE id = :id";
 		$query = $db->prepare($statement);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+		
 		require("vuforia/PostNewTarget.php");
 		$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path);
+		$vuforiaID = $vuforiaRequest->get_target_id();
+
+		$db = new handlerDB("productDisplay");
+		$statement = "UPDATE target SET path_image = :image, vuforiaID = :vuforiaID WHERE id=:id";
+		$query = $db->prepare($statement);
+		$query->bindParam(':image', $path, PDO::PARAM_STR);
+		$query->bindParam(':vuforiaID', $vuforiaID, PDO::PARAM_STR);
+		$query->bindParam(':id', $id, PDO::PARAM_STR);
+		$query->execute();
+		
+
 	}
 	if(isset($_FILES["audio"])){
 		$path = moveFile("audio");
