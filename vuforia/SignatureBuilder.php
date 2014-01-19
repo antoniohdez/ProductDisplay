@@ -39,41 +39,28 @@ class SignatureBuilder{
 		} else {
 			print("ERROR: Invalid content type passed to Sig Builder");
 		}
-		
 
-
-		$toDigest = $method . "\n" . $this->hexDigest . "\n" . $this->contentType . "\n" . $dateValue . "\n" . $requestPath ;
-
-		//echo $toDigest;
-		
+		$toDigest = $method . "\n" . $this->hexDigest . "\n" . $this->contentType . "\n" . $dateValue . "\n" . $requestPath ;		
 		$shaHashed = "";
-		
 		try {
 			// the SHA1 hash needs to be transformed from hexidecimal to Base64
-			$shaHashed = $this->hexToBase64( hash_hmac("sha1", $toDigest , $secret_key) );
-			
+			$shaHashed = $this->hexToBase64(hash_hmac("sha1", $toDigest , $secret_key));
 		} catch ( Exception $e) {
 			$e->getMessage();
 		}
-
 		return $shaHashed;	
 	}
 	
 	
 	private function hexToBase64($hex){
-	
 		$return = "";
 	
 		foreach(str_split($hex, 2) as $pair){
-	
 			$return .= chr(hexdec($pair));
 	
 		}
-	
 		return base64_encode($return);
 	}
-
-
 }
 
 ?>

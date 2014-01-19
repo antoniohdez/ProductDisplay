@@ -25,14 +25,13 @@
 		$query->execute();
 		
 		$db = new handlerDB("productDisplay");
-		$statement = "SELECT name FROM target where id = :id";
+		$statement = "SELECT name FROM target WHERE id = :id";
 		$query = $db->prepare($statement);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
 		require("vuforia/PostNewTarget.php");
 		$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path);
-		echo "Done!!";
 	}
 	if(isset($_FILES["audio"])){
 		$path = moveFile("audio");

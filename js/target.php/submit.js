@@ -128,6 +128,7 @@ $(document).ready(function(){
         {
             //console.log("Image");
             image = true;
+            //console.log(response);
         },
         error: function()
         {
