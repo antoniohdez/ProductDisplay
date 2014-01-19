@@ -48,23 +48,23 @@
                             <form id="targetForm" role="form" action="targetUpload.php" method="post">
                                 <div class="form-group">
                                     <label for="productName">Product name*</label>
-                                    <input type="text" class="form-control" name="productName" placeholder="My Product" autofocus required>
+                                    <input type="text" class="form-control" name="productName" placeholder="My Product" maxlength="60" autofocus required>
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
-                                    <input type="text" class="form-control" name="url" pattern="https?://.+" placeholder="http://www.myCompany.com">
+                                    <input type="text" class="form-control" name="url" pattern="https?://.+" maxlength="128" placeholder="http://www.myCompany.com">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>
-                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" placeholder="http://facebook.com/MyAccount">
+                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" maxlength="128" placeholder="http://facebook.com/MyAccount">
                                 </div>
                                 <div class="form-group">
                                     <label for="twitter">Twitter</label>
-                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+"  placeholder="http://twitter.com/MyAccount">
+                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+" maxlength="128" placeholder="http://twitter.com/MyAccount">
                                 </div>
                                 <div class="form-group">
                                     <label for="telephone">Phone number</label>
-                                    <input type="text" class="form-control" name="phone" placeholder="(555) 555-5555">
+                                    <input type="text" class="form-control" name="phone" placeholder="(555) 555-5555" maxlength="14">
                                 </div>
                                 <button id="submitHidden" class="btn btn-primary btn-block" style="display: none;">
                                     Submit

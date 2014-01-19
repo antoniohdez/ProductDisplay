@@ -16,16 +16,6 @@
 	$output_dir = "";
 	$db = new handlerDB("productDisplay");
 	if(isset($_FILES["image"])){
-
-		//=====//=====//
-		//FALTA AGREGAR LA IMAGEN AL CLOUD DATABASE DE VUFORIA
-		//=====//=====//
-		require("HTTP/Request2.php");
-
-		//=====//=====//
-		//
-		//=====//=====//
-
 		$path = moveFile("image");
 		$id = $_POST["imageId"];
 		$statement = "UPDATE target SET path_image = :image WHERE id=:id";
@@ -33,6 +23,16 @@
 		$query->bindParam(':image', $path, PDO::PARAM_STR);
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
+		
+		$db = new handlerDB("productDisplay");
+		$statement = "SELECT name FROM target where id = :id";
+		$query = $db->prepare($statement);
+		$query->bindParam(':id', $id, PDO::PARAM_STR);
+		$query->execute();
+		$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+		require("vuforia/PostNewTarget.php");
+		$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path);
+		echo "Done!!";
 	}
 	if(isset($_FILES["audio"])){
 		$path = moveFile("audio");

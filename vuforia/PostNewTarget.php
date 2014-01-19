@@ -18,10 +18,12 @@ class PostNewTarget{
 	private $request;       // the HTTP_Request2 object
 	private $jsonRequestObject;
 	
-	private $targetName 	= "Prueba 2";
-	private $imageLocation 	= "UploadedMedia/image/1-Muse_logo.png";
+	private $targetName 	= "";
+	private $imageLocation 	= "UploadedMedia/image/";
 	
-	function PostNewTarget(){
+	function PostNewTarget($name, $location){
+		$this->targetName = $name;
+		$this->imageLocation = $location;
 		
 		$this->jsonRequestObject = json_encode(array(
 			'width'=>600.0,
