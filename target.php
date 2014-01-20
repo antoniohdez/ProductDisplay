@@ -122,7 +122,7 @@
                                     <input id="video" type="file" class="form-control" name="video">
                                     -->
                                     <label for="video">Video</label>
-                                        <input id="videoHidden" name="videoId" type="hidden">
+                                    <input id="videoHidden" name="videoId" type="hidden">
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">
@@ -169,12 +169,12 @@
                     <div class="panel panel-primary shadow">
                         <!-- Default panel contents -->
                         <div class="panel-heading">
-                            <h3 class="panel-title">Image</h3>
+                            <h3 class="panel-title">Target</h3>
                         </div>
                         <div class="panel-body">
                             <form id="targetFormImage" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <!--<label for="image">Image</label>-->
+                                    <label for="image">Image (.jpg and .png only)</label>
                                     <input id="imageHidden" name="imageId" type="hidden">
                                     <div class="input-group">
                                         <span class="input-group-btn">

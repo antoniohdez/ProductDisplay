@@ -24,9 +24,10 @@
 		$query->bindParam(':id', $id, PDO::PARAM_STR);
 		$query->execute();
 		$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
-		
+
+		list($width, $height, $type, $attr) = getimagesize($path);
 		require("vuforia/PostNewTarget.php");
-		$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path);
+		$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path, $width);
 		$vuforiaID = $vuforiaRequest->get_target_id();
 
 		$db = new handlerDB("productDisplay");

@@ -16,12 +16,12 @@ class PostNewTarget{
 	private $targetName 	= "";
 	private $imageLocation 	= "UploadedMedia/image/";
 	
-	function PostNewTarget($name, $location){
+	function PostNewTarget($name, $location, $width){
 		$this->targetName = $name;
 		$this->imageLocation = $location;
 		
 		$this->jsonRequestObject = json_encode(array(
-			'width'=>600.0,
+			'width'=>$width,
 			'name'=>$this->targetName,
 			'image'=>$this->getImageAsBase64(),
 			'application_metadata'=>base64_encode("Vuforia test metadata")
