@@ -32,6 +32,7 @@
 			$query = $db->prepare($statement);
 			$query->bindParam(':id', $_POST["id"], PDO::PARAM_STR);
 			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
+			$query->execute();
 			echo "success";
 		}
 		else{
