@@ -1,8 +1,4 @@
 <?php
-	$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
-
-var_dump(json_decode($json));
-echo "____";
-var_dump(json_decode($json, true));
-
+	require("vuforia/DeleteTarget.php");
+	$vuforiaRequest = new DeleteTarget("430ded29be64441b8d0f638ae44086a7");
 ?>

@@ -57,8 +57,7 @@ class PostNewTarget{
 				//echo $response->getBody();
 				$this->targetId = json_decode($response->getBody(),true)["target_id"];
 			} else {
-				echo 'Unexpected HTTP status: ' . $response->getStatus() . ' ' .
-						$response->getReasonPhrase(). ' ' . $response->getBody();
+				echo 'Unexpected HTTP status: '.$response->getStatus().' '.$response->getReasonPhrase().' '.$response->getBody();
 			}
 		} catch (HTTP_Request2_Exception $e) {
 			echo 'Error: ' . $e->getMessage();

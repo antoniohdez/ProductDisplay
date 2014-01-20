@@ -1,7 +1,7 @@
 <?php
 	require("core/handlerDB.php");
 
-	function moveFile($fileType = "image"){
+	function moveFile($fileType){
 		session_start(); 
 		$output_dir = "uploadedMedia/".$fileType."/";
 		$file_name = $_FILES[$fileType]["name"];
