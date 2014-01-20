@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-01-2014 a las 07:35:57
+-- Tiempo de generación: 20-01-2014 a las 06:19:56
 -- Versión del servidor: 5.6.14
 -- Versión de PHP: 5.5.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `target` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `name` varchar(64) NOT NULL,
+  `name` varchar(60) NOT NULL,
   `url` varchar(128) DEFAULT NULL,
   `facebook` varchar(128) DEFAULT NULL,
   `twitter` varchar(128) DEFAULT NULL,
@@ -37,17 +37,17 @@ CREATE TABLE IF NOT EXISTS `target` (
   `path_audio` varchar(128) DEFAULT NULL,
   `path_video` varchar(128) DEFAULT NULL,
   `path_image` varchar(128) NOT NULL,
+  `vuforiaID` varchar(32) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=90 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=106 ;
 
 --
 -- Volcado de datos para la tabla `target`
 --
 
-INSERT INTO `target` (`id`, `user_id`, `name`, `url`, `facebook`, `twitter`, `phone`, `path_audio`, `path_video`, `path_image`) VALUES
-(68, 1, 'Product 1', 'www.illut.io', 'facebook.com', 'twitter.com', '', NULL, NULL, 'uploadedMedia/image/1-a2Nw6p1_700b.jpg'),
-(72, 1, 'Prueba 4', 'pÃ¡gina', 'Facebook', 'Twitter', '555 555-5555', NULL, NULL, 'uploadedMedia/image/1-Muse_logo.png');
+INSERT INTO `target` (`id`, `user_id`, `name`, `url`, `facebook`, `twitter`, `phone`, `path_audio`, `path_video`, `path_image`, `vuforiaID`) VALUES
+(105, 1, 'Prueba', '', '', '', '', NULL, NULL, 'uploadedMedia/image/1-(1)a2Nw6p1_700b.jpg', 'e3d425ffb0b34356951d2ceec3ce7546');
 
 -- --------------------------------------------------------
 
