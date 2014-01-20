@@ -36,6 +36,7 @@
                 -->
                 <div class="col-md-3">
                 	<?php
+                        printIndexError();
                         printProfileInfo();
                     ?>
                     <div class="infoLinks hidden-xs">
@@ -150,12 +151,12 @@
                     url:    "targetDelete.php",
                     type:   "post",
                     success:function(response){
-                        if(response === "Done"){//Si se elimino correctamente de la base de datos se elimina el codigo html del target
+                        if(response === "success"){//Si se elimino correctamente de la base de datos se elimina el codigo html del target
                             $("#"+id).fadeOut(function(){//Realiza un fadeOut para que sea mas amigable al usuario y despues lo elimina
                                 $("#"+id).remove();
                             });
-                        }else{
-                            alert("This target can't be deleted\nPlease, try again!");
+                        }else if(response === "error vofuria"){
+                            window.location.href = "index.php?error=vuforia";
                         }
                     }
                 });

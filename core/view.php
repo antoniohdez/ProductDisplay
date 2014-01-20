@@ -68,6 +68,20 @@
 		}
 	}
 
+	function printIndexError(){
+		if(isset($_GET["error"])){
+			$error = $_GET["error"];
+			if($error === "vuforia"){
+				$title = "Target can't be deleted!";
+				$message = "if you uploaded some minutes ago, you have to wait until the image can be processed.";
+			}
+			echo '	<div class="alert alert-danger alert-dismissable">
+                		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	            		<strong>'.$title.'</strong> '.$message.'
+        			</div>';
+		}
+	}
+
 	function printProfileInfo(){
 		echo '	<div class="panel panel-primary shadow">
 	                <div class="panel-heading">
