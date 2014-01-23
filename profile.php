@@ -40,7 +40,7 @@
                             <h3 class="panel-title">Edit profile</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="profileForm" role="form" action="profileUpdate.php" method="post">
+                            <form id="profileForm" role="form" action="profileActions.php" method="post">
                                 <div class="form-group">
                                     <label for="productName">Name*</label>
                                     <input type="text" class="form-control" name="name" placeholder="Name" autofocus required>
@@ -318,7 +318,7 @@
                             <h3 class="panel-title">Logo</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="logoForm" role="form" action="saveProfile.php" method="post" enctype="multipart/form-data">
+                            <form id="logoForm" role="form" action="profileActions.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <!--<label for="image">Image</label>-->
                                     <div class="input-group">

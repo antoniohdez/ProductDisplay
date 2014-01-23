@@ -39,6 +39,7 @@
                         printIndexError();
                         printProfileInfo();
                     ?>
+                    <!--
                     <div class="infoLinks hidden-xs">
                         <div class="infoLink">
                             <a class="CSlink" href="http://illut.io">illtu.io</a>
@@ -50,6 +51,7 @@
                             <a class="CSlink" href="#myModal" data-toggle="modal">Report a problem</a>
                         </div>
                     </div>
+                    -->
                 </div><!-- /.sidebar -->
                 <!--
                 CONTENIDO
@@ -67,6 +69,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--
                     <div class="infoLinks visible-xs">
                         <div class="infoLink">
                             <a class="CSlink" href="http://illut.io">illtu.io</a>
@@ -78,6 +81,7 @@
                             <a class="CSlink" href="#myModal" data-toggle="modal">Report a problem</a>
                         </div>
                     </div>
+                    -->
                 </div>
             </div>	
 		</div><!-- /.container -->
@@ -148,7 +152,7 @@
                 var info = {"id" : id}
                 $.ajax({
                     data:   info,
-                    url:    "targetDelete.php",
+                    url:    "targetActions.php?remove",
                     type:   "post",
                     success:function(response){
                         if(response === "success"){//Si se elimino correctamente de la base de datos se elimina el codigo html del target

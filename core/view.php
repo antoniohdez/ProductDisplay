@@ -10,7 +10,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-		                    <a class="navbar-brand" href="index.php">ProductDisplay</a>
+		                    <a class="navbar-brand" href="index.php">ProDisplay</a>
 						</div>
 						<nav class="collapse navbar-collapse">
 		                    <ul class="nav navbar-nav">
@@ -75,6 +75,10 @@
 				$title = "Target can't be deleted!";
 				$message = "if you uploaded some minutes ago, you have to wait until the image can be processed.";
 			}
+			if($error === "invalidTarget"){
+				$title = "Invalid target!";
+				$message = "The target you're trying to edit wasn't found.";
+			}
 			echo '	<div class="alert alert-danger alert-dismissable">
                 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	            		<strong>'.$title.'</strong> '.$message.'
@@ -106,7 +110,7 @@
 
 	function printTargets(){
 		require("core/handlerDB.php");
-		$db = new handlerDB("productDisplay");
+		$db = new handlerDB();
 		$statement = "SELECT * FROM target WHERE user_id = :id";
 		$query = $db->prepare($statement);
 		$query->bindParam(':id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
@@ -131,13 +135,13 @@
 	                        </div>
 	                        <div class="targetInfo">
 	                            <div class="info">
-	                                <a class="CSlink" href="'.$target["url"].'">'.$target["url"].'&nbsp</a>
+	                                <a class="CSlink" target="_blank" href="'.$target["url"].'">'.$target["url"].'&nbsp</a>
 	                            </div>
 	                            <div class="info">
-	                                <a class="CSlink" href="'.$target["facebook"].'">'.$target["facebook"].'&nbsp</a>
+	                                <a class="CSlink" target="_blank" href="'.$target["facebook"].'">'.$target["facebook"].'&nbsp</a>
 	                            </div>
 	                            <div class="info">
-	                                <a class="CSlink" href="'.$target["twitter"].'">'.$target["twitter"].'&nbsp</a>
+	                                <a class="CSlink" target="_blank" href="'.$target["twitter"].'">'.$target["twitter"].'&nbsp</a>
 	                            </div>
 	                            <div class="info">
 	                                '.$target["phone"].'&nbsp

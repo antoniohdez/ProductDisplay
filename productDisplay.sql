@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-01-2014 a las 06:19:56
+-- Tiempo de generación: 21-01-2014 a las 01:54:42
 -- Versión del servidor: 5.6.14
 -- Versión de PHP: 5.5.6
 
@@ -40,14 +40,7 @@ CREATE TABLE IF NOT EXISTS `target` (
   `vuforiaID` varchar(32) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=106 ;
-
---
--- Volcado de datos para la tabla `target`
---
-
-INSERT INTO `target` (`id`, `user_id`, `name`, `url`, `facebook`, `twitter`, `phone`, `path_audio`, `path_video`, `path_image`, `vuforiaID`) VALUES
-(105, 1, 'Prueba', '', '', '', '', NULL, NULL, 'uploadedMedia/image/1-(1)a2Nw6p1_700b.jpg', 'e3d425ffb0b34356951d2ceec3ce7546');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=109 ;
 
 -- --------------------------------------------------------
 
@@ -71,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `country`, `city`, `path_logo`) VALUES
-(1, 'Tony', 'antonio.hdez93@gmail.com', '$2y$11$dbc7cac81540e0edbd32fOlvCM/vAYtOO4LtJ/Cjnwps9yEouaLRS', 'Mexico', 'Tepic', 'uploadedMedia/logo/illutio.png');
+(1, 'Brian', 'brian@illut.io', '$2y$11$dbc7cac81540e0edbd32fOlvCM/vAYtOO4LtJ/Cjnwps9yEouaLRS', 'Mexico', 'Guadalajara', 'uploadedMedia/logo/illutio.png');
 
 --
 -- Restricciones para tablas volcadas

@@ -1,7 +1,7 @@
 <?php
 	require("core/handlerDB.php");
 	if(isset($_GET["login"])){
-		$db = new handlerDB("productDisplay");
+		$db = new handlerDB();	
 		$email = $_POST["email"];
 		$password = $_POST["password"];
 		if(filter_var($email,FILTER_VALIDATE_EMAIL)){//Valida que el formato de email sea valido
@@ -21,7 +21,7 @@
 					$_SESSION["userInfo"]["city"] 	 = $result["city"];
 					$_SESSION["userInfo"]["email"] 	 = $result["email"];
 					$_SESSION["userInfo"]["pathLogo"]= $result["path_logo"];
-
+					
 					//Valida que la session activa en el servidor sea válida para productDisplay
 					$_SESSION["session"]["productDisplay"] = true;
 					$_SESSION["session"]["lastActivity"]   = time();

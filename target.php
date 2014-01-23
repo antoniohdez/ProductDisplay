@@ -2,6 +2,29 @@
     require("core/driverUser.php");
     require("core/view.php");
     validateSession();
+    if(isset($_GET["t"])){
+        require("core/handlerDB.php");
+        $db = new handlerDB();  
+        $statement = "SELECT * FROM target WHERE id = :id AND user_id = :user_id";
+        $query = $db->prepare($statement);
+        $query->bindParam(':id', $_GET["t"], PDO::PARAM_STR);
+        $query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
+        $query->execute();
+        if($query->rowCount() === 1){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+            $name =     $result["name"];
+            $url =      $result["url"];
+            $facebook = $result["facebook"];
+            $twitter =  $result["twitter"];
+            $phone =    $result["phone"];
+            $path_audio = $result["path_audio"];
+            $path_video = $result["path_video"];
+            $path_image = $result["path_image"];
+        }
+        else{
+            header("Location: index.php?error=invalidTarget");
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +33,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
             <?php 
-                if(isset($_GET["p"])) echo "Edit ";
+                if(isset($_GET["t"])) echo "Edit ";
                 else echo "Add ";
             ?>
             target - ProductDisplay
@@ -45,22 +68,22 @@
                             <h3 class="panel-title">New target</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="targetForm" role="form" action="targetUpload.php" method="post">
+                            <form id="targetForm" role="form" action="targetActions.php?upload" method="post">
                                 <div class="form-group">
                                     <label for="productName">Product name*</label>
                                     <input type="text" class="form-control" name="productName" placeholder="My Product" maxlength="60" autofocus required>
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
-                                    <input type="text" class="form-control" name="url" pattern="https?://.+" maxlength="128" placeholder="http://www.myCompany.com">
+                                    <input type="text" class="form-control" name="url" pattern="https?://.+" maxlength="128" placeholder="http://www.example.com" value="http://">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>
-                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" maxlength="128" placeholder="http://facebook.com/MyAccount">
+                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" maxlength="128" placeholder="http://facebook.com/example" value="http://facebook.com/">
                                 </div>
                                 <div class="form-group">
                                     <label for="twitter">Twitter</label>
-                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+" maxlength="128" placeholder="http://twitter.com/MyAccount">
+                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+" maxlength="128" placeholder="http://twitter.com/example" value="http://twitter.com/">
                                 </div>
                                 <div class="form-group">
                                     <label for="telephone">Phone number</label>
@@ -72,8 +95,8 @@
                             </form>
                             <hr style="margin-top: 2em">
 
-                            <form id="targetFormAudio" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data"
-                            <?php if(isset($_GET["p"])){ ?> style="display:none;"<?php } ?> >
+                            <form id="targetFormAudio" role="form" action="targetActions.php?upload" method="post" enctype="multipart/form-data"
+                            <?php if(isset($_GET["t"])){ ?> style="display:none;"<?php } ?> >
                                 <div class="form-group">
                                     <!--
                                     <label for="audio">Audio</label>
@@ -98,7 +121,7 @@
                                 </div> 
                             </form>
 
-                            <?php if(isset($_GET["p"])){ ?>
+                            <?php if(isset($_GET["t"])){ ?>
                             <div id="previewAudio">
                                 <label for="audio">Audio</label><br>
                                 <div class="previewNameForm">
@@ -114,8 +137,8 @@
 
                             <hr style="margin-top: 2em">
 
-                            <form id="targetFormVideo" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data"
-                            <?php if(isset($_GET["p"])){ ?> style="display:none;"<?php } ?> >
+                            <form id="targetFormVideo" role="form" action="targetActions.php?upload" method="post" enctype="multipart/form-data"
+                            <?php if(isset($_GET["t"])){ ?> style="display:none;"<?php } ?> >
                                 <div class="form-group">
                                     <!--
                                     <label for="video">Video</label>
@@ -140,7 +163,7 @@
                                 </div>
                             </form>
 
-                            <?php if(isset($_GET["p"])){ ?>
+                            <?php if(isset($_GET["t"])){ ?>
                             <div id="previewVideo">
                                 <label for="video">Video</label>
                                 <div class="previewNameForm">
@@ -172,7 +195,7 @@
                             <h3 class="panel-title">Target</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="targetFormImage" role="form" action="targetUpload.php" method="post" enctype="multipart/form-data">
+                            <form id="targetFormImage" role="form" action="targetActions.php?upload" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="image">Image (.jpg and .png only)</label>
                                     <input id="imageHidden" name="imageId" type="hidden">
