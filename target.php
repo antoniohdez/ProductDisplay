@@ -2,6 +2,8 @@
     require("core/driverUser.php");
     require("core/view.php");
     validateSession();
+    $name = $phone = $path_audio = $path_video = $path_image = "";
+    $url = $facebook = $twitter = "http://";
     if(isset($_GET["t"])){
         require("core/handlerDB.php");
         $db = new handlerDB();  
@@ -20,6 +22,10 @@
             $path_audio = $result["path_audio"];
             $path_video = $result["path_video"];
             $path_image = $result["path_image"];
+            $path = array("uplodedMedia/audio/", "uplodedMedia/video/", "uplodedMedia/image/");
+            $path_audio_preview = str_replace($path, "", $result["path_audio"]);
+            $path_video_preview = str_replace($path, "", $result["path_video"]);
+            $path_image_preview = str_replace($path, "", $result["path_image"]);
         }
         else{
             header("Location: index.php?error=invalidTarget");
@@ -71,23 +77,23 @@
                             <form id="targetForm" role="form" action="targetActions.php?upload" method="post">
                                 <div class="form-group">
                                     <label for="productName">Product name*</label>
-                                    <input type="text" class="form-control" name="productName" placeholder="My Product" maxlength="60" autofocus required>
+                                    <input type="text" class="form-control" name="productName" placeholder="My Product" value="<?php echo $name; ?>" maxlength="60" autofocus required>
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
-                                    <input type="text" class="form-control" name="url" pattern="https?://.+" maxlength="128" placeholder="http://www.example.com" value="http://">
+                                    <input type="text" class="form-control" name="url" pattern="https?://.+" maxlength="128" placeholder="http://www.example.com" value="<?php echo $url; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>
-                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" maxlength="128" placeholder="http://facebook.com/example" value="http://facebook.com/">
+                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" maxlength="128" placeholder="http://facebook.com/example" value="<?php echo $facebook; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="twitter">Twitter</label>
-                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+" maxlength="128" placeholder="http://twitter.com/example" value="http://twitter.com/">
+                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+" maxlength="128" placeholder="http://twitter.com/example" value="<?php echo $twitter; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="telephone">Phone number</label>
-                                    <input type="text" class="form-control" name="phone" placeholder="(555) 555-5555" maxlength="14">
+                                    <input type="tel" class="form-control" name="phone" placeholder="(555) 555-5555" maxlength="14" value="<?php echo $phone; ?>">
                                 </div>
                                 <button id="submitHidden" class="btn btn-primary btn-block" style="display: none;">
                                     Submit
