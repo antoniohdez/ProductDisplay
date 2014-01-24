@@ -14,7 +14,7 @@ $(document).ready(function(){
         var data = $form.serialize();
         $.ajax({
             data:   data,
-            url:    "targetActions.php?upload",
+            url:    "targetActions.php?edit",
             type:   "post",
             beforeSend:function(){
                 $("#submit").prop("disabled","disabled").html("Saving...");;
@@ -29,9 +29,9 @@ $(document).ready(function(){
                 $("#videoHidden").val(response);
                 //El atributo action de los formularios puede ser cambiado facilmente, 
                 //por razones de seguridad se vuelven a cambiar al original.
-                $('#targetFormImage').attr("action", "targetActions.php?upload");
-                $('#targetFormAudio').attr("action", "targetActions.php?upload");
-                $('#targetFormVideo').attr("action", "targetActions.php?upload");
+                $('#targetFormImage').attr("action", "targetActions.php?edit");
+                $('#targetFormAudio').attr("action", "targetActions.php?edit");
+                $('#targetFormVideo').attr("action", "targetActions.php?edit");
                 $("#targetFormImage").submit();
                 $("#targetFormAudio").submit();
                 $("#targetFormVideo").submit();

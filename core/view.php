@@ -118,7 +118,7 @@
 		$targets = $query->fetchAll(PDO::FETCH_ASSOC);
 		foreach ($targets as $target) {
 			echo '	<div id='.$target["id"].' class="col-md-4">
-	                    <div class="targetContainer">
+	                    <div class="targetContainer shadow">
 	                        <div class="targetTitle info">
 	                        '.$target["name"].'
 	                        </div>

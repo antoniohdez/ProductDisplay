@@ -81,9 +81,9 @@
 		//====//====//
 		//EDIT TARGET
 		//====//====//
+		echo "Editando...";
 
 
-		
 	}else if(isset($_GET["remove"])){
 		//=====//=====//
 		//REMOVE TARGET

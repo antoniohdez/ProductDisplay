@@ -22,10 +22,9 @@
             $path_audio = $result["path_audio"];
             $path_video = $result["path_video"];
             $path_image = $result["path_image"];
-            $path = array("uplodedMedia/audio/", "uplodedMedia/video/", "uplodedMedia/image/");
-            $path_audio_preview = str_replace($path, "", $result["path_audio"]);
-            $path_video_preview = str_replace($path, "", $result["path_video"]);
-            $path_image_preview = str_replace($path, "", $result["path_image"]);
+            $path_audio_preview = str_replace("uploadedMedia/audio/", "", $result["path_audio"]);
+            $path_video_preview = str_replace("uploadedMedia/video/", "", $result["path_video"]);
+            $path_image_preview = str_replace("uploadedMedia/image/", "", $result["path_image"]);
         }
         else{
             header("Location: index.php?error=invalidTarget");
@@ -74,7 +73,7 @@
                             <h3 class="panel-title">New target</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="targetForm" role="form" action="targetActions.php?upload" method="post">
+                            <form id="targetForm" role="form" method="post">
                                 <div class="form-group">
                                     <label for="productName">Product name*</label>
                                     <input type="text" class="form-control" name="productName" placeholder="My Product" value="<?php echo $name; ?>" maxlength="60" autofocus required>
@@ -101,7 +100,7 @@
                             </form>
                             <hr style="margin-top: 2em">
 
-                            <form id="targetFormAudio" role="form" action="targetActions.php?upload" method="post" enctype="multipart/form-data"
+                            <form id="targetFormAudio" role="form" method="post" enctype="multipart/form-data"
                             <?php if(isset($_GET["t"])){ ?> style="display:none;"<?php } ?> >
                                 <div class="form-group">
                                     <!--
@@ -133,8 +132,8 @@
                                 <div class="previewNameForm">
                                     <span onclick="showAudioForm()" class="cursorLink remove"><b class="glyphicon glyphicon-remove"></b>&nbspRemove</span>
                                     <span>
-                                        <a href="http://google.com.mx" target="_blank">
-                                            audio.mp3
+                                        <a href="<?php echo $path_audio ?>" target="_blank">
+                                            <?php echo $path_audio_preview; ?>
                                         </a>
                                     </span>
                                 </div>
@@ -143,7 +142,7 @@
 
                             <hr style="margin-top: 2em">
 
-                            <form id="targetFormVideo" role="form" action="targetActions.php?upload" method="post" enctype="multipart/form-data"
+                            <form id="targetFormVideo" role="form" method="post" enctype="multipart/form-data"
                             <?php if(isset($_GET["t"])){ ?> style="display:none;"<?php } ?> >
                                 <div class="form-group">
                                     <!--
@@ -175,8 +174,8 @@
                                 <div class="previewNameForm">
                                     <span onclick="showVideoForm()" class="cursorLink remove"><b class="glyphicon glyphicon-remove"></b>&nbspRemove</span>
                                     <span>
-                                        <a href="http://google.com.mx" target="_blank">
-                                            video.mp4
+                                        <a href="<?php echo $path_video ?>" target="_blank">
+                                            <?php echo $path_video_preview; ?>
                                         </a>
                                     </span>
                                 </div>
@@ -201,7 +200,7 @@
                             <h3 class="panel-title">Target</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="targetFormImage" role="form" action="targetActions.php?upload" method="post" enctype="multipart/form-data">
+                            <form id="targetFormImage" role="form" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="image">Image (.jpg and .png only)</label>
                                     <input id="imageHidden" name="imageId" type="hidden">
@@ -234,7 +233,7 @@
         <script src="js/jquery-1.11.0-beta1.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.form.js"></script>
-        <script src="js/target.php/submit.js"></script>
+        <?php echo (isset($_GET["t"])) ? '<script src="js/target.php/update.js"></script>' : '<script src="js/target.php/submit.js"></script>'; ?>
         <script src="js/target.php/fileSelect.js"></script>
         <script src="js/target.php/imagePreview.js"></script>
         <script>
