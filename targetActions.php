@@ -132,7 +132,7 @@
 			if($query->rowCount() === 1){
 				$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
 
-				$path = replaceFile("image", $result["path"]);
+				$path = replaceFile("image", $result["path_image"]);
 
 				//require("vuforia/DeleteTarget.php");
 				//$vuforiaRequest = new DeleteTarget($result["vuforiaID"]);
@@ -168,7 +168,7 @@
 			if($query->rowCount() === 1){
 				$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
 
-				$path = replaceFile("audio", $result["path"]);
+				$path = replaceFile("audio", $result["path_audio"]);
 
 				$statement = "UPDATE target SET path_audio = :audio WHERE id=:id";
 				$query = $db->prepare($statement);
@@ -188,7 +188,7 @@
 			if($query->rowCount() === 1){
 				$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
 
-				$path = replaceFile("video", $result["path"]);
+				$path = replaceFile("video", $result["path_video"]);
 
 				$statement = "UPDATE target SET path_video = :video WHERE id=:id";
 				$query = $db->prepare($statement);
