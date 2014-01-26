@@ -2,7 +2,7 @@
 	function printHeader(){
 		//$path = pathinfo($_SERVER['PHP_SELF']);
 		//$path['basename'];
-		echo '	<header class="navbar navbar-inverse navbar-fixed-top">
+		echo '	<header class="navbar navbar-inverse navbar-fixed-top" style="position:relative">
 					<div class="container">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">

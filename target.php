@@ -101,7 +101,7 @@
                             <hr style="margin-top: 2em">
 
                             <form id="targetFormAudio" role="form" method="post" enctype="multipart/form-data"
-                            <?php if(isset($_GET["t"])){ ?> style="display:none;"<?php } ?> >
+                            <?php if(isset($_GET["t"])) echo ' style="display:none;"'; ?> >
                                 <div class="form-group">
                                     <!--
                                     <label for="audio">Audio</label>
@@ -143,7 +143,7 @@
                             <hr style="margin-top: 2em">
 
                             <form id="targetFormVideo" role="form" method="post" enctype="multipart/form-data"
-                            <?php if(isset($_GET["t"])){ ?> style="display:none;"<?php } ?> >
+                            <?php if(isset($_GET["t"])) echo ' style="display:none;"'; ?> >
                                 <div class="form-group">
                                     <!--
                                     <label for="video">Video</label>
@@ -210,7 +210,7 @@
                                                 Browse… <input id="image" name="image" type="file" onchange="return ShowImagePreview(this.files);" required>
                                             </span>
                                         </span>
-                                        <input type="text" class="form-control" readonly="" value="Select a file...">
+                                        <input type="text" class="form-control" readonly="" value="<?php echo ( isset($_GET["t"]) ) ? $path_image_preview : "Select a file..." ; ?>">
                                     </div>
                                     <!--
                                     <div id="progressImage" class="progress progress-striped active">
