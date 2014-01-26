@@ -2,7 +2,7 @@
     require("core/driverUser.php");
     require("core/view.php");
     validateSession();
-    $name = $phone = $path_audio = $path_video = $path_image = "";
+    $name = $phone = $path_audio = $path_video = $path_image = $targetID = "";
     $url = $facebook = $twitter = "http://";
     if(isset($_GET["t"])){
         require("core/handlerDB.php");

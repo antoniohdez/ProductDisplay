@@ -206,7 +206,7 @@
 			$twitter = 		$_POST["twitter"];
 			$phoneNum = 	$_POST["phone"];
 
-			$statement = "UPDATE target SET path_video = :video WHERE id=:id AND user_id = :user_id";
+			$statement = "UPDATE target SET name = :name, url = :url, facebook = :facebook, twitter = :twitter, phone = :phone WHERE id=:id AND user_id = :user_id";
 			$query = $db->prepare($statement);
 
 			$query->bindParam(':id', 	  $targetID);
@@ -219,7 +219,7 @@
 			$query->bindParam(':phone',   $phoneNum);
 
 			$query->execute();
-			echo $db->lastInsertId(); //Return the id from the current connection
+			echo $targetID; //Return the id from the current connection
 		}
 	}
 
@@ -236,8 +236,10 @@
 			//Se selecciona las rutas para borrar los archivos
 			$statement = "SELECT path_image, path_audio, path_video, vuforiaID FROM target WHERE id = :id AND user_id = :user_id";
 			$query = $db->prepare($statement);
-			$query->bindParam(':id', $_POST["id"], PDO::PARAM_STR);
-			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
+
+			$query->bindParam(':id', 	  $_POST["id"]);
+			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"]);
+
 			$query->execute();
 			$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
 			/*
@@ -260,8 +262,8 @@
 				$db = new handlerDB();
 				$statement = "DELETE FROM target WHERE id = :id AND user_id = :user_id";
 				$query = $db->prepare($statement);
-				$query->bindParam(':id', $_POST["id"], PDO::PARAM_STR);
-				$query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
+				$query->bindParam(':id', 	  $_POST["id"]);
+				$query->bindParam(':user_id', $_SESSION["userInfo"]["id"]);
 				$query->execute();
 				echo "success";
 			/*
