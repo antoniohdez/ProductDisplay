@@ -14,6 +14,7 @@
         $query->execute();
         if($query->rowCount() === 1){
             $result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+            $targetID =     $result["id"];
             $name =     $result["name"];
             $url =      $result["url"];
             $facebook = $result["facebook"];
@@ -74,6 +75,9 @@
                         </div>
                         <div class="panel-body">
                             <form id="targetForm" role="form" method="post">
+                                <?php
+                                    echo '<input type="hidden" name="targetID" value="'.$targetID.'">';
+                                ?>
                                 <div class="form-group">
                                     <label for="productName">Product name*</label>
                                     <input type="text" class="form-control" name="productName" placeholder="My Product" value="<?php echo $name; ?>" maxlength="60" autofocus required>
@@ -108,7 +112,7 @@
                                     <input id="audio" type="file" class="form-control" name="audio">
                                     -->
                                     <label for="audio">Audio</label>
-                                        <input id="audioHidden" name="audioId" type="hidden">
+                                    <input id="audioHidden" name="audioId" type="hidden">
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">

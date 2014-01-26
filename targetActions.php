@@ -182,8 +182,8 @@
 			$id = $_POST["videoId"];
 			$statement = "SELECT path_video FROM target WHERE id = :id AND user_id = :user_id";
 			$query = $db->prepare($statement);
-			$query->bindParam(':id', $id, PDO::PARAM_STR);
-			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
+			$query->bindParam(':id', 	  $id);
+			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"]);
 			$query->execute();
 			if($query->rowCount() === 1){
 				$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
@@ -192,27 +192,32 @@
 
 				$statement = "UPDATE target SET path_video = :video WHERE id=:id";
 				$query = $db->prepare($statement);
-				$query->bindParam(':video', $path, PDO::PARAM_STR);
-				$query->bindParam(':id', $id, PDO::PARAM_STR);
+				$query->bindParam(':video', $path);
+				$query->bindParam(':id', 	$id);
 				$query->execute();
 			}
 		}
 
 		else if(isset($_POST["productName"])){
-			$productName = $_POST["productName"];
-			$url = $_POST["url"];
-			$facebook = $_POST["facebook"];
-			$twitter = $_POST["twitter"];
-			$phoneNum = $_POST["phone"];
+			$targetID = 	$_POST["targetID"];
+			$productName = 	$_POST["productName"];
+			$url =			$_POST["url"];
+			$facebook = 	$_POST["facebook"];
+			$twitter = 		$_POST["twitter"];
+			$phoneNum = 	$_POST["phone"];
 
-			$statement = "INSERT INTO target (user_id, name, url, facebook, twitter, phone) VALUES(:user_id, :name, :url, :facebook, :twitter, :phone)";
+			$statement = "UPDATE target SET path_video = :video WHERE id=:id AND user_id = :user_id";
 			$query = $db->prepare($statement);
-			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"], PDO::PARAM_STR);
-			$query->bindParam(':name', $productName, PDO::PARAM_STR);
-			$query->bindParam(':url', $url, PDO::PARAM_STR);
-			$query->bindParam(':facebook', $facebook, PDO::PARAM_STR);
-			$query->bindParam(':twitter', $twitter, PDO::PARAM_STR);
-			$query->bindParam(':phone', $phoneNum, PDO::PARAM_STR);
+
+			$query->bindParam(':id', 	  $targetID);
+			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"]);
+
+			$query->bindParam(':name', 	  $productName);
+			$query->bindParam(':url', 	  $url);
+			$query->bindParam(':facebook',$facebook);
+			$query->bindParam(':twitter', $twitter);
+			$query->bindParam(':phone',   $phoneNum);
+
 			$query->execute();
 			echo $db->lastInsertId(); //Return the id from the current connection
 		}
