@@ -135,16 +135,16 @@
 	                        </div>
 	                        <div class="targetInfo">
 	                            <div class="info">
-	                                <a class="CSlink" target="_blank" href="'.$target["url"].'">'.$target["url"].'&nbsp</a>
+	                                <span><img src="img/web.png" width="14" height="14">&nbsp;</span><a class="CSlink" target="_blank" href="'.$target["url"].'">'.$target["url"].'&nbsp</a>
 	                            </div>
 	                            <div class="info">
-	                                <a class="CSlink" target="_blank" href="'.$target["facebook"].'">'.$target["facebook"].'&nbsp</a>
+	                                <span><img src="img/facebook.png" width="14" height="14">&nbsp;<a class="CSlink" target="_blank" href="'.$target["facebook"].'">'.$target["facebook"].'&nbsp</a>
 	                            </div>
 	                            <div class="info">
-	                                <a class="CSlink" target="_blank" href="'.$target["twitter"].'">'.$target["twitter"].'&nbsp</a>
+	                                <span><img src="img/twitter.png" width="14" height="14">&nbsp;<a class="CSlink" target="_blank" href="'.$target["twitter"].'">'.$target["twitter"].'&nbsp</a>
 	                            </div>
 	                            <div class="info">
-	                                '.$target["phone"].'&nbsp
+	                                <span><img src="img/phone.png" width="14" height="14">&nbsp;'.$target["phone"].'&nbsp
 	                            </div>
 	                        </div>
 	                    </div>
