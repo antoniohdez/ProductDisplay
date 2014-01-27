@@ -37,7 +37,7 @@ $(document).ready(function(){
                 $("#targetFormVideo").submit();
                 setInterval(function(){
                     if(video && audio && image){
-                        window.location.href = "index.php";
+                        window.location.href = "index.php?success=upload";
                     }
                 },1000);
             }

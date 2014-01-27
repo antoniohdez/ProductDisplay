@@ -36,7 +36,7 @@
                 -->
                 <div class="col-md-3">
                 	<?php
-                        printIndexError();
+                        printIndexMessages();
                         printProfileInfo();
                     ?>
                     <!--

@@ -5,10 +5,6 @@ $(document).ready(function(){
     });
 
     $("#targetForm").on("submit", function(){
-        if($("#image").val() == ""){
-            alert("Select an image");
-            return false;
-        }
         var $form = $(this);
         var $inputs = $form.find("input, select");
         var data = $form.serialize();
@@ -38,7 +34,7 @@ $(document).ready(function(){
                 $("#targetFormVideo").submit();
                 setInterval(function(){
                     if(video && audio && image){
-                        window.location.href = "index.php";
+                        window.location.href = "index.php?success=edit";
                     }
                 },1000);
             }

@@ -228,14 +228,14 @@ a.signIn, button.signIn{
 
 .targetTitle{
 	padding: 	.5em;
-	width: 		80%;
+	width: 		70%;
 	font-weight: bold;
 }
 
 .actionButtons{
 	margin-right: .5em;
 	float:		  right;
-	width:		  20%;
+	width:		  30%;
 	margin-top:	  -1.9em;
 }
 
@@ -247,6 +247,10 @@ a.signIn, button.signIn{
 
 .removeButton{
 	color: #F00;
+}
+
+.duplicateButton{
+	margin-right:	.25em;
 }
 
 .targetInfo{

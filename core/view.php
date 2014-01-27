@@ -68,7 +68,7 @@
 		}
 	}
 
-	function printIndexError(){
+	function printIndexMessages(){
 		if(isset($_GET["error"])){
 			$error = $_GET["error"];
 			if($error === "vuforia"){
@@ -80,6 +80,21 @@
 				$message = "The target you're trying to edit wasn't found.";
 			}
 			echo '	<div class="alert alert-danger alert-dismissable">
+                		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	            		<strong>'.$title.'</strong> '.$message.'
+        			</div>';
+		}
+		if(isset($_GET["success"])){
+			$error = $_GET["success"];
+			if($error === "upload"){
+				$title = "Target was saved!";
+				$message = "It will be available on the mobile app in some minutes.";
+			}
+			if($error === "edit"){
+				$title = "Target was edited!";
+				$message = "";
+			}
+			echo '	<div class="alert alert-success alert-dismissable">
                 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	            		<strong>'.$title.'</strong> '.$message.'
         			</div>';
