@@ -27,6 +27,7 @@ $(document).ready(function(){
                 $("#imageHidden").val(response);
                 $("#audioHidden").val(response);
                 $("#videoHidden").val(response);
+                console.log(response);
                 //El atributo action de los formularios puede ser cambiado facilmente, 
                 //por razones de seguridad se vuelven a cambiar al original.
                 $('#targetFormImage').attr("action", "targetActions.php?edit");

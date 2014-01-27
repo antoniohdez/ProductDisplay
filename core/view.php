@@ -123,9 +123,9 @@
 	                        '.$target["name"].'
 	                        </div>
 	                        <div class="text-right actionButtons">
-	                            <!--<span class="editButton">
-	                                <a href="target.php?p='.$target["id"].'" class="glyphicon glyphicon-edit" rel="tooltip" title="Edit"></a>
-	                            </span>-->
+	                            <span class="editButton">
+	                                <a href="target.php?t='.$target["id"].'" class="glyphicon glyphicon-edit" rel="tooltip" title="Edit"></a>
+	                            </span>
 	                            <span class="glyphicon glyphicon-remove removeButton cursorLink" rel="tooltip" title="Delete" onClick="deleteTarget('.$target["id"].')"></span>
 	                        </div>
 	                        <div class="targetImageContainer">
@@ -151,4 +151,5 @@
 	                </div>';
 		}
 	}
+
 ?>

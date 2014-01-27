@@ -11,7 +11,7 @@ function ShowImagePreview(files){
 
     var file = files[0];
     if(file == undefined){
-        var canvas = document.getElementById('previewcanvas');
+        var canvas = document.getElementById('previewCanvas');
         var context = canvas.getContext( '2d' );
         context.clearRect(0, 0, canvas.width, canvas.height);
     }else{
@@ -31,7 +31,7 @@ function ShowImagePreview(files){
 
 function UpdatePreviewCanvas(){
     var img = this;
-    var canvas = document.getElementById('previewcanvas');
+    var canvas = document.getElementById('previewCanvas');
 
     if(typeof canvas === "undefined" || typeof canvas.getContext === "undefined")
         return;

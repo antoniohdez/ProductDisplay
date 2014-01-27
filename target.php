@@ -84,15 +84,15 @@
                             	</div>
                                 <div class="form-group">
                                     <label for="url">URL</label>
-                                    <input type="text" class="form-control" name="url" pattern="https?://.+" maxlength="128" placeholder="http://www.example.com" value="<?php echo $url; ?>">
+                                    <input type="text" class="form-control" name="url" pattern="https?://.*" maxlength="128" placeholder="http://www.example.com" value="<?php echo $url; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="facebook">Facebook</label>
-                                    <input type="text" class="form-control" name="facebook" pattern="https?://.+" maxlength="128" placeholder="http://facebook.com/example" value="<?php echo $facebook; ?>">
+                                    <input type="text" class="form-control" name="facebook" pattern="https?://.*" maxlength="128" placeholder="http://facebook.com/example" value="<?php echo $facebook; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="twitter">Twitter</label>
-                                    <input type="text" class="form-control" name="twitter" pattern="https?://.+" maxlength="128" placeholder="http://twitter.com/example" value="<?php echo $twitter; ?>">
+                                    <input type="text" class="form-control" name="twitter" pattern="https?://.*" maxlength="128" placeholder="http://twitter.com/example" value="<?php echo $twitter; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="telephone">Phone number</label>
@@ -204,31 +204,49 @@
                             <h3 class="panel-title">Target</h3>
                         </div>
                         <div class="panel-body">
-                            <form id="targetFormImage" role="form" method="post" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    <label for="image">Image (.jpg and .png only)</label>
-                                    <input id="imageHidden" name="imageId" type="hidden">
-                                    <div class="input-group">
-                                        <span class="input-group-btn">
-                                            <span class="btn btn-primary btn-file">
-                                                Browse… <input id="image" name="image" type="file" onchange="return ShowImagePreview(this.files);" required>
+                            <div id="targetImage" <?php if(isset($_GET["t"])) echo 'style="display:none"'; ?>>
+                                <form id="targetFormImage" role="form" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="image">Image (.jpg .png only, max 2MB)</label>
+                                        <input id="imageHidden" name="imageId" type="hidden">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <span class="btn btn-primary btn-file">
+                                                    Browse… <input id="image" name="image" type="file" onchange="return ShowImagePreview(this.files);" required>
+                                                </span>
                                             </span>
-                                        </span>
-                                        <input type="text" class="form-control" readonly="" value="<?php echo ( isset($_GET["t"]) ) ? $path_image_preview : "Select a file..." ; ?>">
-                                    </div>
-                                    <!--
-                                    <div id="progressImage" class="progress progress-striped active">
-                                        <div id="barImage" class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                            <span id="percentImage" class="sr-only">0%</span>
+                                            <input type="text" class="form-control" readonly="" value="Select a file...">
                                         </div>
-                                    </div>
-                                    -->
-                                </div> 
-                            </form>
-                            <div id="preview">
-                                <canvas id="previewcanvas" style="cursor:pointer; border: 1px solid #AAA">
-                                </canvas>
+                                        <!--
+                                        <div id="progressImage" class="progress progress-striped active">
+                                            <div id="barImage" class="progress-bar progress-bar-default" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                                <span id="percentImage" class="sr-only">0%</span>
+                                            </div>
+                                        </div>
+                                        -->
+                                    </div> 
+                                </form>
+                                <div id="preview">
+                                    <canvas id="previewCanvas">
+                                    </canvas>
+                                </div>
                             </div>
+                            <?php if(isset($_GET["t"])){ ?>
+                                <div id="previewImage">
+                                    <label for="image">Image</label>
+                                    <div class="previewNameForm">
+                                        <span onclick="showImageForm()" class="cursorLink remove"><b class="glyphicon glyphicon-remove"></b>&nbspRemove</span>
+                                        <span>
+                                            <a href="<?php echo "$path_image" ?>" target="_blank">
+                                                <?php echo $path_image_preview; ?>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div id="preview">
+                                        <img src="<?php echo "$path_image" ?>" class="previewImage">
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -244,7 +262,8 @@
             $("canvas").click(function(){
                 $("#image").trigger("click");
             });
-
+        </script>
+        <script>
             function showVideoForm(){
                 $("#previewVideo").fadeOut("slow", function() {
                     $("#targetFormVideo").fadeIn("slow");
@@ -254,6 +273,12 @@
             function showAudioForm(){
                 $("#previewAudio").fadeOut("slow", function() {
                     $("#targetFormAudio").fadeIn("slow");    
+                });
+            }
+
+            function showImageForm(){
+                $("#previewImage").fadeOut("slow", function() {
+                    $("#targetImage").fadeIn("slow");    
                 });
             }
         </script>

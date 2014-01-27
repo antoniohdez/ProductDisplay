@@ -21,11 +21,10 @@
 
 		$output_dir = "";
 		$db = new handlerDB();
-		
 		if(isset($_FILES["image"])){
 			$path = moveFile("image");
 			$id = $_POST["imageId"];
-
+			
 			$statement = "SELECT name FROM target WHERE id = :id AND user_id = :user_id";
 			$query = $db->prepare($statement);
 
@@ -33,25 +32,25 @@
 			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"]);
 
 			$query->execute();
-			if($query->rowCount() === 1){
-				$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
 
-				//list($width, $height, $type, $attr) = getimagesize($path);
-				//require("vuforia/PostNewTarget.php");
-				//$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path, $width);
-				//$vuforiaID = $vuforiaRequest->get_target_id();
-				$vuforiaID = "{vuforiaID_goes_here}";
-				
-				$db = new handlerDB();
-				$statement = "UPDATE target SET path_image = :image, vuforiaID = :vuforiaID WHERE id=:id";
-				$query = $db->prepare($statement);
+			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-				$query->bindParam(':image', 	$path);
-				$query->bindParam(':vuforiaID', $vuforiaID);
-				$query->bindParam(':id', 		$id);
+			//list($width, $height, $type, $attr) = getimagesize($path);
+			//require("vuforia/PostNewTarget.php");
+			//$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path, $width);
+			//$vuforiaID = $vuforiaRequest->get_target_id();
+			$vuforiaID = "{vuforiaID_goes_here}";
+			
+			$db = new handlerDB();
+			$statement = "UPDATE target SET path_image = :image, vuforiaID = :vuforiaID WHERE id=:id";
+			$query = $db->prepare($statement);
 
-				$query->execute();
-			}
+			$query->bindParam(':image', 	$path);
+			$query->bindParam(':vuforiaID', $vuforiaID);
+			$query->bindParam(':id', 		$id);
+			
+			$query->execute();
+			
 		}
 
 		else if(isset($_FILES["audio"])){
@@ -129,31 +128,29 @@
 			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"]);
 
 			$query->execute();
-			if($query->rowCount() === 1){
-				$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+			$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
 
-				$path = replaceFile("image", $result["path_image"]);
+			$path = replaceFile("image", $result["path_image"]);
 
-				//require("vuforia/DeleteTarget.php");
-				//$vuforiaRequest = new DeleteTarget($result["vuforiaID"]);
-				//$vuforiaRequest->deleted();
+			//require("vuforia/DeleteTarget.php");
+			//$vuforiaRequest = new DeleteTarget($result["vuforiaID"]);
+			//$vuforiaRequest->deleted();
 
-				//list($width, $height, $type, $attr) = getimagesize($path);
-				//require("vuforia/PostNewTarget.php");
-				//$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path, $width);
-				//$vuforiaID = $vuforiaRequest->get_target_id();
-				$vuforiaID = "{vuforiaID_goes_here}";
-				
-				$db = new handlerDB();
-				$statement = "UPDATE target SET path_image = :image, vuforiaID = :vuforiaID WHERE id=:id";
-				$query = $db->prepare($statement);
+			//list($width, $height, $type, $attr) = getimagesize($path);
+			//require("vuforia/PostNewTarget.php");
+			//$vuforiaRequest = new PostNewTarget($id."-".$result["name"], $path, $width);
+			//$vuforiaID = $vuforiaRequest->get_target_id();
+			$vuforiaID = "{vuforiaID_goes_here}";
+			
+			$db = new handlerDB();
+			$statement = "UPDATE target SET path_image = :image, vuforiaID = :vuforiaID WHERE id=:id";
+			$query = $db->prepare($statement);
 
-				$query->bindParam(':image', 	$path);
-				$query->bindParam(':vuforiaID', $vuforiaID);
-				$query->bindParam(':id', 		$id);
+			$query->bindParam(':image', 	$path);
+			$query->bindParam(':vuforiaID', $vuforiaID);
+			$query->bindParam(':id', 		$id);
 
-				$query->execute();
-			}
+			$query->execute();
 		}
 
 		else if(isset($_FILES["audio"])){
