@@ -84,7 +84,7 @@
 			$twitter = $_POST["twitter"];
 			$phoneNum = $_POST["phone"];
 
-			$statement = "INSERT INTO target (user_id, name, url, facebook, twitter, phone) VALUES(:user_id, :name, :url, :facebook, :twitter, :phone)";
+			$statement = "INSERT INTO target (user_id, name, url, facebook, twitter, phone) VALUES (:user_id, :name, :url, :facebook, :twitter, :phone)";
 			$query = $db->prepare($statement);
 
 			$query->bindParam(':user_id',	$_SESSION["userInfo"]["id"]);
@@ -269,6 +269,63 @@
 				echo "error vofuria";
 			}
 			*/
+		}
+	}
+
+
+	else if(isset($_GET["duplicate"])){
+		require("core/handlerDB.php");
+
+		if(isset($_POST["id"])){
+			$db = new handlerDB();
+
+			//Se selecciona las rutas para borrar los archivos
+			$statement = "SELECT * FROM target WHERE id = :id AND user_id = :user_id";
+			$query = $db->prepare($statement);
+
+			$query->bindParam(':id', 	  $_POST["id"]);
+			$query->bindParam(':user_id', $_SESSION["userInfo"]["id"]);
+
+			$query->execute();
+			$result = $query->fetchAll(PDO::FETCH_ASSOC)[0];
+
+			$new_path_image = "";
+			if(file_exists($result["path_image"])){
+				$new_path_image = "uploadedMedia/image/copy ".str_replace("uploadedMedia/image/", "", $result["path_image"]);
+				if( ! copy($result["path_image"], $new_path_image) )//Si el archivo no es copiado no se guarda la ruta en la base de datos
+					$new_path_image = "";
+			}
+
+			$new_path_audio = "";
+			if(file_exists($result["path_audio"])){
+				$new_path_audio = "uploadedMedia/audio/copy ".str_replace("uploadedMedia/audio/", "", $result["path_audio"]);
+				if( ! copy($result["path_audio"], $new_path_audio) )//Si el archivo no es copiado no se guarda la ruta en la base de datos
+					$new_path_audio = "";
+			}
+
+			$new_path_video = "";
+			if(file_exists($result["path_video"])){
+				$new_path_video = "uploadedMedia/video/copy ".str_replace("uploadedMedia/video/", "", $result["path_video"]);
+				if( ! copy($result["path_video"], $new_path_video) )//Si el archivo no es copiado no se guarda la ruta en la base de datos
+					$new_path_video = "";
+			}
+
+			$db = new handlerDB();
+			$statement = "INSERT INTO target (user_id, name, url, facebook, twitter, phone, path_audio, path_video, path_image) VALUES (:user_id, :name, :url, :facebook, :twitter, :phone, :audio, :video, :image)";
+			$query = $db->prepare($statement);
+
+			$query->bindParam(':user_id',	$_SESSION["userInfo"]["id"]);
+			$query->bindParam(':name',		$result["name"]);
+			$query->bindParam(':url', 		$result["url"]);
+			$query->bindParam(':facebook', 	$result["facebook"]);
+			$query->bindParam(':twitter', 	$result["twitter"]);
+			$query->bindParam(':phone', 	$result["phone"]);
+			$query->bindParam(':audio', 	$new_path_audio);
+			$query->bindParam(':video', 	$new_path_video);
+			$query->bindParam(':image', 	$new_path_image);
+
+			$query->execute();
+			echo "success";
 		}
 	}
 	header("session.php?logout");

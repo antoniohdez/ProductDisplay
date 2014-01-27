@@ -75,9 +75,13 @@
 				$title = "Target can't be deleted!";
 				$message = "if you uploaded some minutes ago, you have to wait until the image can be processed.";
 			}
-			if($error === "invalidTarget"){
+			else if($error === "invalidTarget"){
 				$title = "Invalid target!";
 				$message = "The target you're trying to edit wasn't found.";
+			}
+			else if($error === "delete"){
+				$title = "Target can't be deleted!";
+				$message = "";
 			}
 			echo '	<div class="alert alert-danger alert-dismissable">
                 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -87,12 +91,20 @@
 		if(isset($_GET["success"])){
 			$error = $_GET["success"];
 			if($error === "upload"){
-				$title = "Target was saved!";
+				$title = "Target saved!";
 				$message = "It will be available on the mobile app in some minutes.";
 			}
-			if($error === "edit"){
-				$title = "Target was edited!";
+			else if($error === "edit"){
+				$title = "Target edited!";
 				$message = "";
+			}
+			else if($error === "duplicate"){
+				$title = "Target duplicated!";
+				$message = "";
+			}
+			else{
+				$title = "Success!";
+				$message = "";	
 			}
 			echo '	<div class="alert alert-success alert-dismissable">
                 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -138,6 +150,7 @@
 	                        '.$target["name"].'
 	                        </div>
 	                        <div class="text-right actionButtons">
+	                        	<span class="glyphicon glyphicon-file cursorLink duplicateButton" rel="tooltip" title="Duplicate" onClick="duplicateTarget('.$target["id"].')"></span>
 	                            <span class="editButton">
 	                                <a href="target.php?t='.$target["id"].'" class="glyphicon glyphicon-edit" rel="tooltip" title="Edit"></a>
 	                            </span>

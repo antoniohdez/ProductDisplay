@@ -162,6 +162,28 @@
                         }else if(response === "error vofuria"){
                             window.location.href = "index.php?error=vuforia";
                         }
+                        else{
+                            window.location.href = "index.php?error=delete";   
+                        }
+                    }
+                });
+            }
+
+            function duplicateTarget(id){//Elimina el target con ajax
+                if(!confirm("DUPLICATE TARGET?\n.")){
+                    return false;
+                }
+                var info = {"id" : id}
+                $.ajax({
+                    data:   info,
+                    url:    "targetActions.php?duplicate",
+                    type:   "post",
+                    success:function(response){
+                        if(response === "success"){//Si se elimino correctamente de la base de datos se elimina el codigo html del target
+                            window.location.href = "index.php?success=duplicate";
+                        }else{
+                            window.location.href = "index.php?error=duplicate";
+                        }
                     }
                 });
             }
