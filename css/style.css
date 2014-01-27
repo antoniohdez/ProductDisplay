@@ -66,25 +66,26 @@ textarea{
 }
 
 .icon{
-	min-height:	14px;
-	min-width:	14px;
+	height:	14px;
+	width:	14px;
 	background-image:url('../img/sprite.png');
+	display: inline-block;
 }
 
 .web{
-	background-position:0px 0px;
+	background-position:0px 14px;
 }
 
 .facebook{
-	background-position:0px 50px;
+	background-position:0px 56px;
 }
 
 .twitter{
-
+	background-position:0px 28px;
 }
 
 .phone{
-
+	background-position:0px 42px;
 }
 
 /*	
