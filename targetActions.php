@@ -328,5 +328,4 @@
 			echo "success";
 		}
 	}
-	header("session.php?logout");
 ?>
