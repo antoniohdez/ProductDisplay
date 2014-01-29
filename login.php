@@ -21,7 +21,7 @@
 	        <a href="#" rel="me">BETA</a>
 	    </div>
 	    <!--/BETA-->
-		<header class="navbar navbar-inverse navbar-fixed-top">
+		<header class="navbar navbar-inverse navbar-fixed-top" style="position:relative">
 	        <div class="container">
 	            <div class="navbar-header">
 	                <a class="navbar-brand" href="index.php">ProductDisplay</a>
