@@ -179,9 +179,12 @@
                     url:    "targetActions.php?duplicate",
                     type:   "post",
                     success:function(response){
+                        console.log("Respuesta");
                         if(response === "success"){//Si se elimino correctamente de la base de datos se elimina el codigo html del target
+                            console.log("Duplicado");
                             window.location.href = "index.php?success=duplicate";
                         }else{
+                            console.log("NO duplicado");
                             window.location.href = "index.php?error=duplicate";
                         }
                     }
